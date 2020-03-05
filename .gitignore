@@ -1,0 +1,2 @@
+/etc/build/*
+!/etc/build/.gitignore

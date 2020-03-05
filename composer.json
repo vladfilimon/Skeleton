@@ -1,0 +1,56 @@
+{
+    "name": "monofony/skeleton",
+    "type": "project",
+    "description": "A Minimal Monofony project to create applications.",
+    "license": "MIT",
+    "require": {
+        "php": "^7.1",
+        "monofony/admin-bundle": "^0.1",
+        "monofony/core-bundle": "^0.1",
+        "monofony/fixtures-plugin": "^0.1",
+        "monofony/front-bundle": "^0.1",
+        "symfony/flex": "^1.6"
+    },
+    "require-dev": {
+        "monofony/test-pack": "^0.1"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd",
+            "security-checker security:check": "script"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": true,
+            "require": "4.4.*"
+        }
+    }
+}
