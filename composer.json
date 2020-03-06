@@ -6,6 +6,7 @@
     "require": {
         "php": "^7.1",
         "monofony/admin-bundle": "^0.1",
+        "monofony/api-bundle": "^0.1",
         "monofony/core-bundle": "^0.1",
         "monofony/fixtures-plugin": "^0.1",
         "monofony/front-bundle": "^0.1",
