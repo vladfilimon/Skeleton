@@ -3115,7 +3115,7 @@
         },
         {
             "name": "monofony/admin-bundle",
-            "version": "v0.1.0",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/AdminBundle.git",
@@ -3151,16 +3151,16 @@
         },
         {
             "name": "monofony/api-bundle",
-            "version": "v0.1.0",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/ApiBundle.git",
-                "reference": "e0872deeb1e83194f35f0a623c9b857f2752e66e"
+                "reference": "b236593be31b05722b1f038f6c97214f834600db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/ApiBundle/zipball/e0872deeb1e83194f35f0a623c9b857f2752e66e",
-                "reference": "e0872deeb1e83194f35f0a623c9b857f2752e66e",
+                "url": "https://api.github.com/repos/Monofony/ApiBundle/zipball/b236593be31b05722b1f038f6c97214f834600db",
+                "reference": "b236593be31b05722b1f038f6c97214f834600db",
                 "shasum": ""
             },
             "require": {
@@ -3184,11 +3184,11 @@
                 "MIT"
             ],
             "description": "Monofony API bundle.",
-            "time": "2020-03-02T10:26:28+00:00"
+            "time": "2020-03-06T16:22:37+00:00"
         },
         {
             "name": "monofony/core",
-            "version": "v0.1.0",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/Core.git",
@@ -3223,7 +3223,7 @@
         },
         {
             "name": "monofony/core-bundle",
-            "version": "v0.1.0",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/CoreBundle.git",
@@ -3293,7 +3293,7 @@
         },
         {
             "name": "monofony/fixtures-plugin",
-            "version": "v0.1.0",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/FixturesPlugin.git",
@@ -3330,7 +3330,7 @@
         },
         {
             "name": "monofony/front-bundle",
-            "version": "v0.1.0",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/FrontBundle.git",
@@ -12068,7 +12068,7 @@
         },
         {
             "name": "monofony/test-pack",
-            "version": "v0.1.0",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/TestPack.git",
