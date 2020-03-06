@@ -14,6 +14,7 @@ cache:
 env:
     global:
         - APP_ENV=test
+        - IS_DOCTRINE_ORM_SUPPORTED=true
         - DATABASE_URL=mysql://root@127.0.0.1:3306/monofony_%kernel.environment%?serverVersion=5.7
         - MONOFONY_CACHE_DIR=$HOME/.monofony-cache
         - MONOFONY_BUILD_DIR=etc/build
