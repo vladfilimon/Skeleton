@@ -4,16 +4,16 @@
     "description": "A Minimal Monofony project to create applications.",
     "license": "MIT",
     "require": {
-        "php": "^7.1",
-        "monofony/admin-bundle": "^0.1",
-        "monofony/api-bundle": "^0.1",
-        "monofony/core-bundle": "^0.1",
-        "monofony/fixtures-plugin": "^0.1",
-        "monofony/front-bundle": "^0.1",
+        "php": "^7.2",
+        "monofony/admin-bundle": "^0.2",
+        "monofony/api-bundle": "^0.2",
+        "monofony/core-bundle": "^0.2",
+        "monofony/fixtures-plugin": "^0.2",
+        "monofony/front-bundle": "^0.2",
         "symfony/flex": "^1.6"
     },
     "require-dev": {
-        "monofony/test-pack": "^0.1"
+        "monofony/test-pack": "^0.2"
     },
     "config": {
         "optimize-autoloader": true,
