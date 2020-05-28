@@ -3119,7 +3119,7 @@
         },
         {
             "name": "monofony/admin-bundle",
-            "version": "v0.2.2",
+            "version": "v0.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/AdminBundle.git",
@@ -3158,7 +3158,7 @@
         },
         {
             "name": "monofony/api-bundle",
-            "version": "v0.2.2",
+            "version": "v0.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/ApiBundle.git",
@@ -3198,7 +3198,7 @@
         },
         {
             "name": "monofony/core",
-            "version": "v0.2.2",
+            "version": "v0.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/Core.git",
@@ -3233,16 +3233,16 @@
         },
         {
             "name": "monofony/core-bundle",
-            "version": "v0.2.2",
+            "version": "v0.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/CoreBundle.git",
-                "reference": "5a452e40bdea8fa46c0153f6e3eb9940cbe6d06b"
+                "reference": "4d74ba83f4de78472ded25af336b044f0e58a306"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/CoreBundle/zipball/5a452e40bdea8fa46c0153f6e3eb9940cbe6d06b",
-                "reference": "5a452e40bdea8fa46c0153f6e3eb9940cbe6d06b",
+                "url": "https://api.github.com/repos/Monofony/CoreBundle/zipball/4d74ba83f4de78472ded25af336b044f0e58a306",
+                "reference": "4d74ba83f4de78472ded25af336b044f0e58a306",
                 "shasum": ""
             },
             "require": {
@@ -3271,6 +3271,7 @@
                 "symfony/dotenv": "4.4.*",
                 "symfony/flex": "^1.2",
                 "symfony/monolog-bundle": "^3.3",
+                "symfony/polyfill-php80": "^1.15",
                 "symfony/proxy-manager-bridge": "4.4.*",
                 "symfony/serializer": "4.4.*",
                 "symfony/swiftmailer-bundle": "^3.0",
@@ -3302,11 +3303,11 @@
                 "MIT"
             ],
             "description": "Monofony core bundle.",
-            "time": "2020-05-07T10:13:09+00:00"
+            "time": "2020-05-11T07:35:14+00:00"
         },
         {
             "name": "monofony/fixtures-plugin",
-            "version": "v0.2.2",
+            "version": "v0.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/FixturesPlugin.git",
@@ -3346,7 +3347,7 @@
         },
         {
             "name": "monofony/front-bundle",
-            "version": "v0.2.2",
+            "version": "v0.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/FrontBundle.git",
@@ -7891,6 +7892,68 @@
             "time": "2020-02-27T09:26:54+00:00"
         },
         {
+            "name": "symfony/polyfill-php80",
+            "version": "v1.17.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php80.git",
+                "reference": "5e30b2799bc1ad68f7feb62b60a73743589438dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/5e30b2799bc1ad68f7feb62b60a73743589438dd",
+                "reference": "5e30b2799bc1ad68f7feb62b60a73743589438dd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.17-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php80\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ],
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ion Bazan",
+                    "email": "ion.bazan@gmail.com"
+                },
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2020-05-12T16:47:27+00:00"
+        },
+        {
             "name": "symfony/process",
             "version": "v4.4.8",
             "source": {
@@ -12094,16 +12157,16 @@
         },
         {
             "name": "monofony/test-pack",
-            "version": "v0.2.2",
+            "version": "v0.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/TestPack.git",
-                "reference": "f97d0d2b99886d379324983044e3b600d3ea8bfb"
+                "reference": "7fce75b997c4651d10d32b0f32fe0eb0edba8ae4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/TestPack/zipball/f97d0d2b99886d379324983044e3b600d3ea8bfb",
-                "reference": "f97d0d2b99886d379324983044e3b600d3ea8bfb",
+                "url": "https://api.github.com/repos/Monofony/TestPack/zipball/7fce75b997c4651d10d32b0f32fe0eb0edba8ae4",
+                "reference": "7fce75b997c4651d10d32b0f32fe0eb0edba8ae4",
                 "shasum": ""
             },
             "require": {
@@ -12131,7 +12194,6 @@
                 "se/selenium-server-standalone": " ^2.52",
                 "symfony/debug-bundle": "4.4.*",
                 "symfony/web-profiler-bundle": "4.4.*",
-                "symplify/monorepo-builder": "^7.2",
                 "vimeo/psalm": "^3.4"
             },
             "type": "metapackage",
@@ -12145,7 +12207,7 @@
                 "MIT"
             ],
             "description": "Monofony test pack.",
-            "time": "2020-03-03T20:33:35+00:00"
+            "time": "2020-05-11T09:11:07+00:00"
         },
         {
             "name": "myclabs/deep-copy",
