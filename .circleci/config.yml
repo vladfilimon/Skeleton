@@ -1,0 +1,112 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+version: 2
+jobs:
+    build:
+        docker:
+            # Specify the version you desire here
+            -   image: circleci/php:7.2-node-browsers
+                environment:
+                    - APP_ENV: test
+                    - IS_DOCTRINE_ORM_SUPPORTED: true
+                    - MONOFONY_BUILD_DIR: etc/build
+                    - DATABASE_URL: mysql://root@127.0.0.1:3306/monofony_%kernel.environment%?serverVersion=5.7
+                    - SYMFONY_ENDPOINT: https://flex.symfony.com/r/github.com/symfony/recipes-contrib/871
+
+            # Specify service dependencies here if necessary
+            # CircleCI maintains a library of pre-built images
+            # documented at https://circleci.com/docs/2.0/circleci-images/
+            # Using the RAM variation mitigates I/O contention
+            # for database intensive operations.
+            - image: circleci/mysql:5.7-ram
+            #
+            # - image: redis:2.8.19
+
+        steps:
+            - checkout
+
+            -   run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
+            -   run: sudo docker-php-ext-install zip
+            -   run: sudo docker-php-ext-install pdo_mysql
+
+            # Download and cache dependencies
+#            -   restore_cache:
+#                    keys:
+#                        # "composer.lock" can be used if it is committed to the repo
+#                        - v1-dependencies-{{ checksum "composer.json" }}
+#                        # fallback to using the latest cache if no exact match is found
+#                        - v1-dependencies-
+
+            -   run: echo 'memory_limit = -1' | sudo tee -a /usr/local/etc/php/conf.d/docker-php-memlimit.ini
+            -   run: composer install -n --prefer-dist
+
+#            -   save_cache:
+#                    key: v1-dependencies-{{ checksum "composer.json" }}
+#                    paths:
+#                        - ./vendor
+            -   restore_cache:
+                    keys:
+                        - node-v1-{{ checksum "package.json" }}
+                        - node-v1-
+            -   run: yarn install
+            -   save_cache:
+                    key: node-v1-{{ checksum "package.json" }}
+                    paths:
+                        - node_modules
+
+            # prepare the environment
+            -   run: composer dump-env test
+            -   run: bin/console doctrine:database:create -vvv
+            -   run: APP_DEBUG=1 APP_ENV=dev ./bin/console cache:warmup -vvv # For PHPStan
+            -   run: bin/console doctrine:migrations:migrate -n -vv
+            -   run: bin/console assets:install public -vvv
+            -   run: bin/console cache:warmup -vvv
+            -   run: yarn build
+            -   run:
+                    name: Configure display
+                    command: |
+                        /sbin/start-stop-daemon --start --quiet --pidfile /tmp/xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1680x1050x16
+                        export DISPLAY=:99
+            -   run:
+                    name: Download Symfony CLI
+                    command: |
+                        wget https://get.symfony.com/cli/installer -O - | bash
+            -   run:
+                    name: Download and configure ChromeDriver
+                    command: |
+                        curl http://chromedriver.storage.googleapis.com/2.34/chromedriver_linux64.zip > chromedriver.zip
+                        unzip chromedriver.zip
+                        chmod +x chromedriver
+            -   run:
+                    name: Run ChromeDriver
+                    command: chromedriver
+                    background: true
+            -   run:
+                    name: Download and configure Selenium
+                    command: curl http://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar > selenium.jar
+            -   run:
+                    name: Run Selenium
+                    command: java -Dwebdriver.chrome.driver=chromedriver -jar selenium.jar
+                    background: true
+            -   run:
+                    name: Run webserver
+                    command: |
+                        ~/.symfony/bin/symfony server:ca:install
+                        ~/.symfony/bin/symfony server:start --port=8080 --dir=public --force-php-discovery --daemon
+
+            # run tests
+            -   run: composer validate --strict
+            -   run: vendor/bin/security-checker security:check
+            -   run: bin/console doctrine:schema:validate -vvv
+            -   run: bin/console lint:twig templates
+            -   run: bin/console lint:yaml config --parse-tags
+            -   run: phpdbg -qrr vendor/bin/phpspec run --no-interaction -f dot
+            -   run: vendor/bin/phpstan analyse -c phpstan.neon -l 1 src
+            -   run: vendor/bin/psalm --show-info=false
+            -   run: vendor/bin/phpunit
+            -   run: bin/console app:install --no-interaction -vvv
+            -   run: bin/console sylius:fixtures:load default --no-interaction
+            -   run: vendor/bin/behat --strict -vvv --no-interaction -f progress || vendor/bin/behat --strict -vvv --no-interaction -f progress --rerun
+            -   run: (bin/console doctrine:migrations:migrate first --no-interaction && bin/console doctrine:migrations:migrate latest --no-interaction)
