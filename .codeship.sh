@@ -1,3 +1,15 @@
+#!/usr/bin/env bash
+
+# Argument 1: Text
+bold() {
+    echo -e "\e[1m$1\e[0;20m"
+}
+
+# Argument 1: Text
+bold_green() {
+    echo -e "\e[33;1m$1\e[0;20m"
+}
+
 # Argument 1: Action
 # Argument 2: Subject
 print_header() {
