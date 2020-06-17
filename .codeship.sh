@@ -45,9 +45,6 @@ run_command "printf \"/usr \n\n\n\n\n\n\nno\n\" | pecl install memcached" || exi
 print_header "Memory limit" "AppName"
 run_command "sed -i'' 's/^memory_limit=.*/memory_limit = -1/g' ${HOME}/.phpenv/versions/$(phpenv version-name)/etc/php.ini" || exit $?
 
-print_header "Updating Composer" "AppName"
-run_command "composer self-update --preview"
-
 print_header "Disable xdebug"
 run_command "rm -f /home/rof/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini"
 
