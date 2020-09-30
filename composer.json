@@ -5,15 +5,15 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
-        "monofony/admin-bundle": "^0.2",
-        "monofony/api-bundle": "^0.2",
-        "monofony/core-bundle": "^0.2",
-        "monofony/fixtures-plugin": "^0.2",
-        "monofony/front-bundle": "^0.2",
+        "monofony/admin-bundle": "^0.3",
+        "monofony/api-bundle": "^0.3",
+        "monofony/core-bundle": "^0.3",
+        "monofony/fixtures-plugin": "^0.3",
+        "monofony/front-bundle": "^0.3",
         "symfony/flex": "^1.6"
     },
     "require-dev": {
-        "monofony/test-pack": "^0.2"
+        "monofony/test-pack": "^0.3"
     },
     "config": {
         "optimize-autoloader": true,
