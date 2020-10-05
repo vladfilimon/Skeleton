@@ -3181,7 +3181,7 @@
         },
         {
             "name": "monofony/admin-bundle",
-            "version": "v0.3.0",
+            "version": "v0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/AdminBundle.git",
@@ -3220,7 +3220,7 @@
         },
         {
             "name": "monofony/api-bundle",
-            "version": "v0.3.0",
+            "version": "v0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/ApiBundle.git",
@@ -3260,16 +3260,16 @@
         },
         {
             "name": "monofony/core",
-            "version": "v0.3.0",
+            "version": "v0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/Core.git",
-                "reference": "04f360fc58db6989415c0c01a75ced9a10d85543"
+                "reference": "f407dea88750df7c7711348511d240b77bb161ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/Core/zipball/04f360fc58db6989415c0c01a75ced9a10d85543",
-                "reference": "04f360fc58db6989415c0c01a75ced9a10d85543",
+                "url": "https://api.github.com/repos/Monofony/Core/zipball/f407dea88750df7c7711348511d240b77bb161ca",
+                "reference": "f407dea88750df7c7711348511d240b77bb161ca",
                 "shasum": ""
             },
             "require": {
@@ -3291,20 +3291,20 @@
                 "MIT"
             ],
             "description": "Monofony core.",
-            "time": "2020-09-29T15:51:03+00:00"
+            "time": "2020-10-05T12:36:59+00:00"
         },
         {
             "name": "monofony/core-bundle",
-            "version": "v0.3.0",
+            "version": "v0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/CoreBundle.git",
-                "reference": "091e158f3d7d0a309a2b7af26aa7c12e1c892342"
+                "reference": "9d7d6e84d3c0754975262b20feac309263bbabdd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/CoreBundle/zipball/091e158f3d7d0a309a2b7af26aa7c12e1c892342",
-                "reference": "091e158f3d7d0a309a2b7af26aa7c12e1c892342",
+                "url": "https://api.github.com/repos/Monofony/CoreBundle/zipball/9d7d6e84d3c0754975262b20feac309263bbabdd",
+                "reference": "9d7d6e84d3c0754975262b20feac309263bbabdd",
                 "shasum": ""
             },
             "require": {
@@ -3365,11 +3365,11 @@
                 "MIT"
             ],
             "description": "Monofony core bundle.",
-            "time": "2020-09-30T07:31:26+00:00"
+            "time": "2020-10-05T12:44:29+00:00"
         },
         {
             "name": "monofony/fixtures-plugin",
-            "version": "v0.3.0",
+            "version": "v0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/FixturesPlugin.git",
@@ -3409,7 +3409,7 @@
         },
         {
             "name": "monofony/front-bundle",
-            "version": "v0.3.0",
+            "version": "v0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/FrontBundle.git",
@@ -9866,6 +9866,7 @@
                 "i18n",
                 "text"
             ],
+            "abandoned": true,
             "time": "2018-12-05T18:34:18+00:00"
         },
         {
@@ -12298,7 +12299,7 @@
         },
         {
             "name": "monofony/test-pack",
-            "version": "v0.3.0",
+            "version": "v0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/TestPack.git",
@@ -13278,6 +13279,7 @@
                 "self-update",
                 "update"
             ],
+            "abandoned": true,
             "time": "2018-03-30T12:52:15+00:00"
         },
         {
@@ -14242,6 +14244,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {
