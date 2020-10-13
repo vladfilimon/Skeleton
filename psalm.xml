@@ -9,6 +9,8 @@
         <directory name="src" />
         <ignoreFiles>
             <directory name="vendor" />
+            <directory name="var" />
+            <file name="src/Kernel.php" />
         </ignoreFiles>
     </projectFiles>
 
