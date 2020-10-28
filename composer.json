@@ -45,8 +45,6 @@
             "@auto-scripts"
         ]
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "conflict": {
         "symfony/symfony": "*"
     },
