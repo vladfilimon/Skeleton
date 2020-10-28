@@ -24,6 +24,10 @@ run_command() {
 }
 
 export APP_NAME_CACHE_DIR=$HOME/cache
+export LIBSODIUM_VERSION=1.0.18
+
+# Export this on your CODESHIP environment
+# export DATABASE_URL="mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@127.0.0.1/app_name_%kernel.environment%"
 
 print_header "Setting up mysql" "AppName"
 export MYSQL_DIR="$HOME/mysql-5.7"
@@ -33,7 +37,7 @@ export PATH="$MYSQL_DIR/bin:$PATH"
 run_command "\curl -sSL https://raw.githubusercontent.com/codeship/scripts/master/packages/mysql-5.7.sh | bash -s"
 
 # Set php version
-phpenv local 7.2
+phpenv local 7.3
 run_command "php -v"
 
 # Set node version
@@ -82,16 +86,8 @@ run_command "yarn install && yarn run encore production" || exit $?
 run_command "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 2880x1800x16"
 run_command "export DISPLAY=:99"
 
-# Download and configure ChromeDriver
-if [ ! -f $APP_NAME_CACHE_DIR/chromedriver ] || [ "$($APP_NAME_CACHE_DIR/chromedriver --version | grep -c 2.34)" = "0" ]; then
-    run_command "curl https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_linux64.zip > chromedriver.zip"
-    run_command "unzip chromedriver.zip"
-    run_command "chmod +x chromedriver"
-    run_command "mv chromedriver $APP_NAME_CACHE_DIR"
-fi
-
 # Run ChromeDriver
-run_command "$APP_NAME_CACHE_DIR/chromedriver > /dev/null 2>&1 &"
+run_command "chromedriver > /dev/null 2>&1 &"
 
 # Download and configure Selenium
 if [ ! -f $APP_NAME_CACHE_DIR/selenium.jar ] || [ "$(java -jar $APP_NAME_CACHE_DIR/selenium.jar --version | grep -c 3.4.0)" = "0" ]; then
