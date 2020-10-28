@@ -4,16 +4,17 @@
     "description": "A Minimal Monofony project to create applications.",
     "license": "MIT",
     "require": {
-        "php": "^7.2",
-        "monofony/admin-bundle": "^0.3",
-        "monofony/api-bundle": "^0.3",
-        "monofony/core-bundle": "^0.3",
-        "monofony/fixtures-plugin": "^0.3",
-        "monofony/front-bundle": "^0.3",
-        "symfony/flex": "^1.6"
+        "php": "^7.3",
+        "monofony/admin-pack": "^0.4",
+        "monofony/core-pack": "^0.4",
+        "monofony/fos-oauth-server-bridge": "^0.4",
+        "symfony/dotenv": "4.4.*",
+        "symfony/flex": "^1.9",
+        "symfony/monolog-bundle": "^3.1",
+        "symfony/webpack-encore-bundle": "^1.7"
     },
     "require-dev": {
-        "monofony/test-pack": "^0.3"
+        "monofony/test-pack": "^0.4"
     },
     "config": {
         "optimize-autoloader": true,
@@ -35,8 +36,7 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd",
-            "security-checker security:check": "script"
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"
@@ -45,6 +45,8 @@
             "@auto-scripts"
         ]
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "conflict": {
         "symfony/symfony": "*"
     },

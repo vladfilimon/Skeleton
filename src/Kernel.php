@@ -2,7 +2,6 @@
 
 namespace App;
 
-use PSS\SymfonyMockerContainer\DependencyInjection\MockerContainer;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Config\Resource\FileResource;
@@ -29,15 +28,6 @@ class Kernel extends BaseKernel
     public function getProjectDir(): string
     {
         return \dirname(__DIR__);
-    }
-
-    protected function getContainerBaseClass()
-    {
-        if (in_array($this->getEnvironment(), ['test', 'test_cached'], true)) {
-            return MockerContainer::class;
-        }
-
-        return parent::getContainerBaseClass();
     }
 
     protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader): void

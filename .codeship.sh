@@ -84,7 +84,7 @@ run_command "export DISPLAY=:99"
 
 # Download and configure ChromeDriver
 if [ ! -f $APP_NAME_CACHE_DIR/chromedriver ] || [ "$($APP_NAME_CACHE_DIR/chromedriver --version | grep -c 2.34)" = "0" ]; then
-    run_command "curl http://chromedriver.storage.googleapis.com/2.34/chromedriver_linux64.zip > chromedriver.zip"
+    run_command "curl https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_linux64.zip > chromedriver.zip"
     run_command "unzip chromedriver.zip"
     run_command "chmod +x chromedriver"
     run_command "mv chromedriver $APP_NAME_CACHE_DIR"
