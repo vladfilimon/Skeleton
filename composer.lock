@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5b2784fb1348a488967bfffcd2ca159",
+    "content-hash": "e0b2c49877786e0d120cd5ed43412497",
     "packages": [
         {
             "name": "behat/behat",
@@ -3491,7 +3491,7 @@
         },
         {
             "name": "monofony/core",
-            "version": "v0.4.0-beta.3",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/Core.git",
@@ -3525,7 +3525,7 @@
             "description": "Monofony core.",
             "support": {
                 "issues": "https://github.com/Monofony/Core/issues",
-                "source": "https://github.com/Monofony/Core/tree/v0.4.0-beta.3"
+                "source": "https://github.com/Monofony/Core/tree/v0.4.0"
             },
             "time": "2020-10-23T12:34:35+00:00"
         },
@@ -15756,9 +15756,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": [],
-    "prefer-stable": true,
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": "^7.3"
