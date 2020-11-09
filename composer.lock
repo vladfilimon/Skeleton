@@ -3292,7 +3292,7 @@
         },
         {
             "name": "monofony/admin",
-            "version": "v0.4.0",
+            "version": "v0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/Admin.git",
@@ -3331,13 +3331,13 @@
             "description": "Monofony admin.",
             "support": {
                 "issues": "https://github.com/Monofony/Admin/issues",
-                "source": "https://github.com/Monofony/Admin/tree/v0.4.0"
+                "source": "https://github.com/Monofony/Admin/tree/v0.4.1"
             },
             "time": "2020-10-23T13:34:55+00:00"
         },
         {
             "name": "monofony/admin-contracts",
-            "version": "v0.4.0",
+            "version": "v0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/AdminContracts.git",
@@ -3374,22 +3374,22 @@
             "description": "Generic abstractions related to Admin",
             "support": {
                 "issues": "https://github.com/Monofony/AdminContracts/issues",
-                "source": "https://github.com/Monofony/AdminContracts/tree/v0.4.0"
+                "source": "https://github.com/Monofony/AdminContracts/tree/v0.4.1"
             },
             "time": "2020-10-23T12:26:03+00:00"
         },
         {
             "name": "monofony/admin-pack",
-            "version": "v0.4.0",
+            "version": "v0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/AdminPack.git",
-                "reference": "959498351ec43d8b2ff8535cee9b977f1409484a"
+                "reference": "8c751ad6c77bd38bd01bde4797ccf6a86ea2328c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/AdminPack/zipball/959498351ec43d8b2ff8535cee9b977f1409484a",
-                "reference": "959498351ec43d8b2ff8535cee9b977f1409484a",
+                "url": "https://api.github.com/repos/Monofony/AdminPack/zipball/8c751ad6c77bd38bd01bde4797ccf6a86ea2328c",
+                "reference": "8c751ad6c77bd38bd01bde4797ccf6a86ea2328c",
                 "shasum": ""
             },
             "require": {
@@ -3430,22 +3430,22 @@
             "description": "Monofony admin pack.",
             "support": {
                 "issues": "https://github.com/Monofony/AdminPack/issues",
-                "source": "https://github.com/Monofony/AdminPack/tree/v0.4.0"
+                "source": "https://github.com/Monofony/AdminPack/tree/v0.4.1"
             },
-            "time": "2020-10-27T10:20:58+00:00"
+            "time": "2020-11-09T14:01:03+00:00"
         },
         {
             "name": "monofony/behat-bridge",
-            "version": "v0.4.0",
+            "version": "v0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/BehatBridge.git",
-                "reference": "57402a6dda746e1e1309dc8ee4abb05c5a31a3c2"
+                "reference": "1018ee85f400c26ab59cb6aea7d5aa52a54172ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/BehatBridge/zipball/57402a6dda746e1e1309dc8ee4abb05c5a31a3c2",
-                "reference": "57402a6dda746e1e1309dc8ee4abb05c5a31a3c2",
+                "url": "https://api.github.com/repos/Monofony/BehatBridge/zipball/1018ee85f400c26ab59cb6aea7d5aa52a54172ba",
+                "reference": "1018ee85f400c26ab59cb6aea7d5aa52a54172ba",
                 "shasum": ""
             },
             "require": {
@@ -3485,9 +3485,9 @@
             "description": "Monofony Behat Bridge",
             "support": {
                 "issues": "https://github.com/Monofony/BehatBridge/issues",
-                "source": "https://github.com/Monofony/BehatBridge/tree/v0.4.0"
+                "source": "https://github.com/Monofony/BehatBridge/tree/v0.4.1"
             },
-            "time": "2020-10-26T22:41:49+00:00"
+            "time": "2020-11-09T14:22:26+00:00"
         },
         {
             "name": "monofony/core",
@@ -3531,16 +3531,16 @@
         },
         {
             "name": "monofony/core-bundle",
-            "version": "v0.4.0",
+            "version": "v0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/CoreBundle.git",
-                "reference": "e558cbfa33274bef225e71c876e827ca0a35d288"
+                "reference": "d5a3b2aa25b062f1e4f147144752a8a7ad702632"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/CoreBundle/zipball/e558cbfa33274bef225e71c876e827ca0a35d288",
-                "reference": "e558cbfa33274bef225e71c876e827ca0a35d288",
+                "url": "https://api.github.com/repos/Monofony/CoreBundle/zipball/d5a3b2aa25b062f1e4f147144752a8a7ad702632",
+                "reference": "d5a3b2aa25b062f1e4f147144752a8a7ad702632",
                 "shasum": ""
             },
             "require": {
@@ -3575,13 +3575,13 @@
             "description": "Monofony core bundle.",
             "support": {
                 "issues": "https://github.com/Monofony/CoreBundle/issues",
-                "source": "https://github.com/Monofony/CoreBundle/tree/v0.4.0"
+                "source": "https://github.com/Monofony/CoreBundle/tree/v0.4.1"
             },
-            "time": "2020-10-27T12:56:36+00:00"
+            "time": "2020-11-09T14:34:43+00:00"
         },
         {
             "name": "monofony/core-contracts",
-            "version": "v0.4.0",
+            "version": "v0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/CoreContracts.git",
@@ -3620,22 +3620,22 @@
             "description": "Generic abstractions related to Core",
             "support": {
                 "issues": "https://github.com/Monofony/CoreContracts/issues",
-                "source": "https://github.com/Monofony/CoreContracts/tree/v0.4.0"
+                "source": "https://github.com/Monofony/CoreContracts/tree/v0.4.1"
             },
             "time": "2020-10-26T22:41:49+00:00"
         },
         {
             "name": "monofony/core-pack",
-            "version": "v0.4.0",
+            "version": "v0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/CorePack.git",
-                "reference": "8bb8277bfeadf963cb84c8b617a31bdc01169f6a"
+                "reference": "e268527f2114f66e751574bbecfbace8966aee0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/CorePack/zipball/8bb8277bfeadf963cb84c8b617a31bdc01169f6a",
-                "reference": "8bb8277bfeadf963cb84c8b617a31bdc01169f6a",
+                "url": "https://api.github.com/repos/Monofony/CorePack/zipball/e268527f2114f66e751574bbecfbace8966aee0b",
+                "reference": "e268527f2114f66e751574bbecfbace8966aee0b",
                 "shasum": ""
             },
             "require": {
@@ -3684,13 +3684,13 @@
             "description": "Monofony core pack.",
             "support": {
                 "issues": "https://github.com/Monofony/CorePack/issues",
-                "source": "https://github.com/Monofony/CorePack/tree/v0.4.0"
+                "source": "https://github.com/Monofony/CorePack/tree/v0.4.1"
             },
-            "time": "2020-10-27T12:50:22+00:00"
+            "time": "2020-11-09T14:29:29+00:00"
         },
         {
             "name": "monofony/fos-oauth-server-bridge",
-            "version": "v0.4.0",
+            "version": "v0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/FOSOAuthServerBridge.git",
@@ -3728,13 +3728,13 @@
             "description": "Monofony FOS OAuth Server Bridge",
             "support": {
                 "issues": "https://github.com/Monofony/FOSOAuthServerBridge/issues",
-                "source": "https://github.com/Monofony/FOSOAuthServerBridge/tree/v0.4.0"
+                "source": "https://github.com/Monofony/FOSOAuthServerBridge/tree/v0.4.1"
             },
             "time": "2020-10-26T22:41:49+00:00"
         },
         {
             "name": "monofony/sylius-user-bridge",
-            "version": "v0.4.0",
+            "version": "v0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/SyliusUserBridge.git",
@@ -3774,7 +3774,7 @@
             "description": "Monofony Sylius User Bridge",
             "support": {
                 "issues": "https://github.com/Monofony/SyliusUserBridge/issues",
-                "source": "https://github.com/Monofony/SyliusUserBridge/tree/v0.4.0"
+                "source": "https://github.com/Monofony/SyliusUserBridge/tree/v0.4.1"
             },
             "time": "2020-10-27T12:44:31+00:00"
         },
@@ -12662,7 +12662,7 @@
         },
         {
             "name": "monofony/test-pack",
-            "version": "v0.4.0",
+            "version": "v0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/TestPack.git",
@@ -12714,7 +12714,7 @@
             "description": "Monofony test pack.",
             "support": {
                 "issues": "https://github.com/Monofony/TestPack/issues",
-                "source": "https://github.com/Monofony/TestPack/tree/v0.4.0"
+                "source": "https://github.com/Monofony/TestPack/tree/v0.4.1"
             },
             "time": "2020-10-27T10:21:29+00:00"
         },
