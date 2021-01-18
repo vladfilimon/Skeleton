@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0f22a5e06f3b58407738b4ec2af4540",
+    "content-hash": "f3a8c40fa557eba1998e7b2ef8929c9b",
     "packages": [
         {
             "name": "babdev/pagerfanta-bundle",
@@ -3160,16 +3160,16 @@
         },
         {
             "name": "monofony/admin",
-            "version": "dev-master",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/Admin.git",
-                "reference": "a57d8854b8c815fe0aa84939ffe60a35d17f06e0"
+                "reference": "e5f223cba29b83baea66be9e4f994580ca062b06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/Admin/zipball/a57d8854b8c815fe0aa84939ffe60a35d17f06e0",
-                "reference": "a57d8854b8c815fe0aa84939ffe60a35d17f06e0",
+                "url": "https://api.github.com/repos/Monofony/Admin/zipball/e5f223cba29b83baea66be9e4f994580ca062b06",
+                "reference": "e5f223cba29b83baea66be9e4f994580ca062b06",
                 "shasum": ""
             },
             "require": {
@@ -3183,7 +3183,6 @@
                 "friends-of-behat/page-object-extension": "^0.3",
                 "phpstan/phpstan": "^0.12"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -3202,13 +3201,13 @@
             "description": "Monofony admin.",
             "support": {
                 "issues": "https://github.com/Monofony/Admin/issues",
-                "source": "https://github.com/Monofony/Admin/tree/master"
+                "source": "https://github.com/Monofony/Admin/tree/v0.5.0"
             },
-            "time": "2021-01-13T08:27:58+00:00"
+            "time": "2021-01-15T17:37:39+00:00"
         },
         {
             "name": "monofony/admin-contracts",
-            "version": "dev-master",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/AdminContracts.git",
@@ -3226,7 +3225,6 @@
             "require-dev": {
                 "phpstan/phpstan": "^0.12"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -3248,13 +3246,13 @@
             "description": "Generic abstractions related to Admin",
             "support": {
                 "issues": "https://github.com/Monofony/AdminContracts/issues",
-                "source": "https://github.com/Monofony/AdminContracts/tree/master"
+                "source": "https://github.com/Monofony/AdminContracts/tree/v0.5.0"
             },
             "time": "2021-01-12T16:12:50+00:00"
         },
         {
             "name": "monofony/admin-pack",
-            "version": "dev-master",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/AdminPack.git",
@@ -3286,7 +3284,6 @@
                 "friends-of-behat/page-object-extension": "^0.3",
                 "phpstan/phpstan": "^0.12"
             },
-            "default-branch": true,
             "type": "symfony-pack",
             "extra": {
                 "branch-alias": {
@@ -3305,22 +3302,22 @@
             "description": "Monofony admin pack.",
             "support": {
                 "issues": "https://github.com/Monofony/AdminPack/issues",
-                "source": "https://github.com/Monofony/AdminPack/tree/master"
+                "source": "https://github.com/Monofony/AdminPack/tree/v0.5.0"
             },
             "time": "2021-01-13T12:45:25+00:00"
         },
         {
             "name": "monofony/behat-bridge",
-            "version": "dev-master",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/BehatBridge.git",
-                "reference": "3e0b8c80c04978b1ffd44bcd8e09ebfd31e9c7eb"
+                "reference": "8ecb0ea758304e6b9b6ed176c802fde7dc7480ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/BehatBridge/zipball/3e0b8c80c04978b1ffd44bcd8e09ebfd31e9c7eb",
-                "reference": "3e0b8c80c04978b1ffd44bcd8e09ebfd31e9c7eb",
+                "url": "https://api.github.com/repos/Monofony/BehatBridge/zipball/8ecb0ea758304e6b9b6ed176c802fde7dc7480ce",
+                "reference": "8ecb0ea758304e6b9b6ed176c802fde7dc7480ce",
                 "shasum": ""
             },
             "require": {
@@ -3341,7 +3338,6 @@
             "require-dev": {
                 "phpstan/phpstan": "^0.12"
             },
-            "default-branch": true,
             "type": "symfony-bridge",
             "extra": {
                 "branch-alias": {
@@ -3363,9 +3359,9 @@
             "description": "Monofony Behat Bridge",
             "support": {
                 "issues": "https://github.com/Monofony/BehatBridge/issues",
-                "source": "https://github.com/Monofony/BehatBridge/tree/master"
+                "source": "https://github.com/Monofony/BehatBridge/tree/v0.5.0"
             },
-            "time": "2021-01-13T08:27:58+00:00"
+            "time": "2021-01-15T17:37:39+00:00"
         },
         {
             "name": "monofony/core",
@@ -3412,16 +3408,16 @@
         },
         {
             "name": "monofony/core-bundle",
-            "version": "dev-master",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/CoreBundle.git",
-                "reference": "524879565e3148db9ed07085b977db2deda3ddf4"
+                "reference": "1ddc2d76a3800d661fabe5d4b754351a390eea06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/CoreBundle/zipball/524879565e3148db9ed07085b977db2deda3ddf4",
-                "reference": "524879565e3148db9ed07085b977db2deda3ddf4",
+                "url": "https://api.github.com/repos/Monofony/CoreBundle/zipball/1ddc2d76a3800d661fabe5d4b754351a390eea06",
+                "reference": "1ddc2d76a3800d661fabe5d4b754351a390eea06",
                 "shasum": ""
             },
             "require": {
@@ -3437,7 +3433,6 @@
             "require-dev": {
                 "phpstan/phpstan": "^0.12"
             },
-            "default-branch": true,
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -3459,22 +3454,22 @@
             "description": "Monofony core bundle.",
             "support": {
                 "issues": "https://github.com/Monofony/CoreBundle/issues",
-                "source": "https://github.com/Monofony/CoreBundle/tree/master"
+                "source": "https://github.com/Monofony/CoreBundle/tree/v0.5.0"
             },
-            "time": "2021-01-13T16:53:04+00:00"
+            "time": "2021-01-18T11:41:50+00:00"
         },
         {
             "name": "monofony/core-contracts",
-            "version": "dev-master",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/CoreContracts.git",
-                "reference": "29cad266e7b8eae5a3ca4fdb0b96a2207b647c22"
+                "reference": "c7817aa1868b71e4f48da25c42399b52fd548cf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/CoreContracts/zipball/29cad266e7b8eae5a3ca4fdb0b96a2207b647c22",
-                "reference": "29cad266e7b8eae5a3ca4fdb0b96a2207b647c22",
+                "url": "https://api.github.com/repos/Monofony/CoreContracts/zipball/c7817aa1868b71e4f48da25c42399b52fd548cf9",
+                "reference": "c7817aa1868b71e4f48da25c42399b52fd548cf9",
                 "shasum": ""
             },
             "require": {
@@ -3485,7 +3480,6 @@
             "require-dev": {
                 "phpstan/phpstan": "^0.12"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -3504,13 +3498,13 @@
             "description": "Generic abstractions related to Core",
             "support": {
                 "issues": "https://github.com/Monofony/CoreContracts/issues",
-                "source": "https://github.com/Monofony/CoreContracts/tree/master"
+                "source": "https://github.com/Monofony/CoreContracts/tree/v0.5.0"
             },
-            "time": "2021-01-13T16:53:04+00:00"
+            "time": "2021-01-15T17:37:39+00:00"
         },
         {
             "name": "monofony/core-pack",
-            "version": "dev-master",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/CorePack.git",
@@ -3550,7 +3544,6 @@
                 "monofony/behat-bridge": "^0.5",
                 "phpstan/phpstan": "^0.12"
             },
-            "default-branch": true,
             "type": "symfony-pack",
             "extra": {
                 "branch-alias": {
@@ -3569,13 +3562,13 @@
             "description": "Monofony core pack.",
             "support": {
                 "issues": "https://github.com/Monofony/CorePack/issues",
-                "source": "https://github.com/Monofony/CorePack/tree/master"
+                "source": "https://github.com/Monofony/CorePack/tree/v0.5.0"
             },
             "time": "2021-01-13T13:15:06+00:00"
         },
         {
             "name": "monofony/customer-bundle",
-            "version": "dev-master",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/SyliusCustomerBundle.git",
@@ -3607,7 +3600,6 @@
                 "symfony/dependency-injection": "^4.4 || ^5.1",
                 "symfony/form": "^4.4 || ^5.1"
             },
-            "default-branch": true,
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -3656,22 +3648,22 @@
                 "groups"
             ],
             "support": {
-                "source": "https://github.com/Monofony/SyliusCustomerBundle/tree/master"
+                "source": "https://github.com/Monofony/SyliusCustomerBundle/tree/v1.9.0"
             },
             "time": "2021-01-03T15:45:53+00:00"
         },
         {
             "name": "monofony/fos-oauth-server-bridge",
-            "version": "dev-master",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/FOSOAuthServerBridge.git",
-                "reference": "a5bf749a16a48ccd24d1aaeecdaefc10b09ab91e"
+                "reference": "86a1c6fc625cf10c4d1c6e0f8574ab09d8cba4fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/FOSOAuthServerBridge/zipball/a5bf749a16a48ccd24d1aaeecdaefc10b09ab91e",
-                "reference": "a5bf749a16a48ccd24d1aaeecdaefc10b09ab91e",
+                "url": "https://api.github.com/repos/Monofony/FOSOAuthServerBridge/zipball/86a1c6fc625cf10c4d1c6e0f8574ab09d8cba4fe",
+                "reference": "86a1c6fc625cf10c4d1c6e0f8574ab09d8cba4fe",
                 "shasum": ""
             },
             "require": {
@@ -3681,7 +3673,6 @@
             "require-dev": {
                 "phpstan/phpstan": "^0.12"
             },
-            "default-branch": true,
             "type": "symfony-bridge",
             "extra": {
                 "branch-alias": {
@@ -3703,22 +3694,22 @@
             "description": "Monofony FOS OAuth Server Bridge",
             "support": {
                 "issues": "https://github.com/Monofony/FOSOAuthServerBridge/issues",
-                "source": "https://github.com/Monofony/FOSOAuthServerBridge/tree/master"
+                "source": "https://github.com/Monofony/FOSOAuthServerBridge/tree/v0.5.0"
             },
-            "time": "2021-01-12T16:12:50+00:00"
+            "time": "2021-01-15T17:37:39+00:00"
         },
         {
             "name": "monofony/sylius-user-bridge",
-            "version": "dev-master",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/SyliusUserBridge.git",
-                "reference": "3d8d80c3f2d3c156ab0c5440413b31846da75629"
+                "reference": "5f30eb04e27678086c35755853449b7de2670e65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/SyliusUserBridge/zipball/3d8d80c3f2d3c156ab0c5440413b31846da75629",
-                "reference": "3d8d80c3f2d3c156ab0c5440413b31846da75629",
+                "url": "https://api.github.com/repos/Monofony/SyliusUserBridge/zipball/5f30eb04e27678086c35755853449b7de2670e65",
+                "reference": "5f30eb04e27678086c35755853449b7de2670e65",
                 "shasum": ""
             },
             "require": {
@@ -3730,7 +3721,6 @@
             "require-dev": {
                 "phpstan/phpstan": "^0.12"
             },
-            "default-branch": true,
             "type": "symfony-bridge",
             "extra": {
                 "branch-alias": {
@@ -3752,13 +3742,13 @@
             "description": "Monofony Sylius User Bridge",
             "support": {
                 "issues": "https://github.com/Monofony/SyliusUserBridge/issues",
-                "source": "https://github.com/Monofony/SyliusUserBridge/tree/master"
+                "source": "https://github.com/Monofony/SyliusUserBridge/tree/v0.5.0"
             },
-            "time": "2021-01-13T08:27:58+00:00"
+            "time": "2021-01-15T17:37:39+00:00"
         },
         {
             "name": "monofony/ui-bundle",
-            "version": "dev-master",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/SyliusUiBundle.git",
@@ -3795,7 +3785,6 @@
                 "symfony/form": "^4.4 || ^5.1",
                 "twig/twig": "^2.12"
             },
-            "default-branch": true,
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -3837,13 +3826,13 @@
                 "webshop"
             ],
             "support": {
-                "source": "https://github.com/Monofony/SyliusUiBundle/tree/master"
+                "source": "https://github.com/Monofony/SyliusUiBundle/tree/v1.9.0"
             },
             "time": "2021-01-12T09:48:07+00:00"
         },
         {
             "name": "monofony/user",
-            "version": "dev-master",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/User.git",
@@ -3868,7 +3857,6 @@
             "suggest": {
                 "ext-mbstring": "For better performance than using Symfony Polyfill Component"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -3918,28 +3906,28 @@
                 "user"
             ],
             "support": {
-                "source": "https://github.com/Monofony/User/tree/master"
+                "source": "https://github.com/Monofony/User/tree/v1.9.0"
             },
             "time": "2021-01-04T10:39:29+00:00"
         },
         {
             "name": "monofony/user-bundle",
-            "version": "dev-master",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/SyliusUserBundle.git",
-                "reference": "2fdb51f2fafd5e8887f4f42b20f9861125575ca7"
+                "reference": "dd2299812acce083d3d4e30bbf02fabe16a3efb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/SyliusUserBundle/zipball/2fdb51f2fafd5e8887f4f42b20f9861125575ca7",
-                "reference": "2fdb51f2fafd5e8887f4f42b20f9861125575ca7",
+                "url": "https://api.github.com/repos/Monofony/SyliusUserBundle/zipball/dd2299812acce083d3d4e30bbf02fabe16a3efb2",
+                "reference": "dd2299812acce083d3d4e30bbf02fabe16a3efb2",
                 "shasum": ""
             },
             "require": {
                 "doctrine/orm": "^2.7",
                 "egulias/email-validator": "^2.1",
-                "monofony/user": "dev-master",
+                "monofony/user": "^1.9",
                 "php": "^7.3",
                 "sylius/mailer-bundle": "^1.4",
                 "sylius/resource-bundle": "^1.7",
@@ -3962,7 +3950,6 @@
             "suggest": {
                 "hwi/oauth-bundle": "For OAuth integration"
             },
-            "default-branch": true,
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -4016,9 +4003,9 @@
                 "user"
             ],
             "support": {
-                "source": "https://github.com/Monofony/SyliusUserBundle/tree/master"
+                "source": "https://github.com/Monofony/SyliusUserBundle/tree/v1.9.0"
             },
-            "time": "2021-01-12T11:42:59+00:00"
+            "time": "2021-01-18T12:02:18+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -12578,16 +12565,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v2.17.3",
+            "version": "v2.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "bd32f5dd72cdfc7b53f54077f980e144bfa2f595"
+                "reference": "cbc5b50bfa2688a1afca20e5a8c71f058e9ccbef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/bd32f5dd72cdfc7b53f54077f980e144bfa2f595",
-                "reference": "bd32f5dd72cdfc7b53f54077f980e144bfa2f595",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/cbc5b50bfa2688a1afca20e5a8c71f058e9ccbef",
+                "reference": "cbc5b50bfa2688a1afca20e5a8c71f058e9ccbef",
                 "shasum": ""
             },
             "require": {
@@ -12609,7 +12596,6 @@
                 "symfony/stopwatch": "^3.0 || ^4.0 || ^5.0"
             },
             "require-dev": {
-                "johnkary/phpunit-speedtrap": "^1.1 || ^2.0 || ^3.0",
                 "justinrainbow/json-schema": "^5.0",
                 "keradus/cli-executor": "^1.4",
                 "mikey179/vfsstream": "^1.6",
@@ -12618,11 +12604,11 @@
                 "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.2",
                 "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "^1.2.1",
                 "phpspec/prophecy-phpunit": "^1.1 || ^2.0",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.13 || ^9.4.4 <9.5",
+                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.13 || ^9.5",
                 "phpunitgoodpractices/polyfill": "^1.5",
                 "phpunitgoodpractices/traits": "^1.9.1",
                 "sanmai/phpunit-legacy-adapter": "^6.4 || ^8.2.1",
-                "symfony/phpunit-bridge": "^5.1",
+                "symfony/phpunit-bridge": "^5.2.1",
                 "symfony/yaml": "^3.0 || ^4.0 || ^5.0"
             },
             "suggest": {
@@ -12670,7 +12656,7 @@
             "description": "A tool to automatically fix PHP code style",
             "support": {
                 "issues": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues",
-                "source": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/tree/v2.17.3"
+                "source": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/tree/v2.18.0"
             },
             "funding": [
                 {
@@ -12678,7 +12664,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-12-24T11:14:44+00:00"
+            "time": "2021-01-18T03:31:06+00:00"
         },
         {
             "name": "infection/abstract-testframework-adapter",
@@ -13170,16 +13156,16 @@
         },
         {
             "name": "monofony/test-pack",
-            "version": "dev-master",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/TestPack.git",
-                "reference": "52737f06ca3ac41c71c2362e4c49ec0c6a1690a2"
+                "reference": "eeae83badaa089d327f02294675d31a5c29bd2ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/TestPack/zipball/52737f06ca3ac41c71c2362e4c49ec0c6a1690a2",
-                "reference": "52737f06ca3ac41c71c2362e4c49ec0c6a1690a2",
+                "url": "https://api.github.com/repos/Monofony/TestPack/zipball/eeae83badaa089d327f02294675d31a5c29bd2ea",
+                "reference": "eeae83badaa089d327f02294675d31a5c29bd2ea",
                 "shasum": ""
             },
             "require": {
@@ -13198,7 +13184,7 @@
                 "lakion/mink-debug-extension": "^1.2",
                 "lchrusciel/api-test-case": "^5.0",
                 "monofony/behat-bridge": "^0.5",
-                "phpspec/phpspec": "^6.2",
+                "phpspec/phpspec": "^7.0",
                 "phpstan/phpstan": "^0.12",
                 "phpstan/phpstan-doctrine": "^0.12",
                 "phpstan/phpstan-nette": "^0.12",
@@ -13210,7 +13196,6 @@
                 "symfony/web-profiler-bundle": "4.4.* || 5.2.*",
                 "vimeo/psalm": "^4.3"
             },
-            "default-branch": true,
             "type": "symfony-pack",
             "extra": {
                 "branch-alias": {
@@ -13224,9 +13209,9 @@
             "description": "Monofony test pack.",
             "support": {
                 "issues": "https://github.com/Monofony/TestPack/issues",
-                "source": "https://github.com/Monofony/TestPack/tree/master"
+                "source": "https://github.com/Monofony/TestPack/tree/v0.5.0"
             },
-            "time": "2021-01-13T14:22:09+00:00"
+            "time": "2021-01-15T17:47:49+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -13974,30 +13959,30 @@
         },
         {
             "name": "phpspec/phpspec",
-            "version": "6.3.1",
+            "version": "7.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/phpspec.git",
-                "reference": "6f3de03e235ab817aff35cc76aceb09826c3c4f8"
+                "reference": "26e814250e76711235a30b6f1a7695181934f230"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/6f3de03e235ab817aff35cc76aceb09826c3c4f8",
-                "reference": "6f3de03e235ab817aff35cc76aceb09826c3c4f8",
+                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/26e814250e76711235a30b6f1a7695181934f230",
+                "reference": "26e814250e76711235a30b6f1a7695181934f230",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.5",
                 "ext-tokenizer": "*",
-                "php": "^7.2 || 8.0.*",
+                "php": "^7.3 || 8.0.*",
                 "phpspec/php-diff": "^1.0.0",
                 "phpspec/prophecy": "^1.9",
-                "sebastian/exporter": "^1.0 || ^2.0 || ^3.0 || ^4.0",
-                "symfony/console": "^3.4 || ^4.0 || ^5.0",
-                "symfony/event-dispatcher": "^3.4 || ^4.0 || ^5.0",
-                "symfony/finder": "^3.4 || ^4.0 || ^5.0",
-                "symfony/process": "^3.4 || ^4.0 || ^5.0",
-                "symfony/yaml": "^3.4 || ^4.0 || ^5.0"
+                "sebastian/exporter": "^3.0 || ^4.0",
+                "symfony/console": "^3.4 || ^4.4 || ^5.0",
+                "symfony/event-dispatcher": "^3.4 || ^4.4 || ^5.0",
+                "symfony/finder": "^3.4 || ^4.4 || ^5.0",
+                "symfony/process": "^3.4 || ^4.4 || ^5.0",
+                "symfony/yaml": "^3.4 || ^4.4 || ^5.0"
             },
             "conflict": {
                 "sebastian/comparator": "<1.2.4"
@@ -14016,7 +14001,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.3.x-dev"
+                    "dev-main": "7.0.x-dev"
                 }
             },
             "autoload": {
@@ -14056,9 +14041,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phpspec/phpspec/issues",
-                "source": "https://github.com/phpspec/phpspec/tree/6.3.1"
+                "source": "https://github.com/phpspec/phpspec/tree/7.0.1"
             },
-            "time": "2020-12-29T14:47:41+00:00"
+            "time": "2020-12-29T14:51:04+00:00"
         },
         {
             "name": "phpspec/prophecy",
