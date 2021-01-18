@@ -1,13 +1,13 @@
 {
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "core-js": "3",
     "jquery": "^3.4.0",
     "lightbox2": "^2.9.0",
     "semantic-ui-css": "npm:fomantic-ui-css@^2.7.0"
   },
   "devDependencies": {
     "@symfony/webpack-encore": "^0.32.0",
+    "core-js": "3",
     "dedent": "^0.7.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
