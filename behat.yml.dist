@@ -9,7 +9,7 @@ default:
             snippets: false
 
     extensions:
-        Lakion\Behat\MinkDebugExtension:
+        FriendsOfBehat\MinkDebugExtension:
             directory: etc/build
             clean_start: false
             screenshot: true
@@ -37,7 +37,8 @@ default:
                             extra_capabilities:
                                 unexpectedAlertBehaviour: accept
 
-        FriendsOfBehat\SymfonyExtension: ~
+        FriendsOfBehat\SymfonyExtension:
+            bootstrap: tests/bootstrap.php
 
         FriendsOfBehat\VariadicExtension: ~
 
