@@ -2,6 +2,9 @@ language: php
 
 dist: trusty
 
+addons:
+    chrome: stable
+
 php:
     - '7.3'
 
@@ -26,6 +29,7 @@ before_install:
     - phpenv config-rm xdebug.ini
     - echo "memory_limit=4096M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
     - mkdir -p "${MONOFONY_CACHE_DIR}"
+    - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 https://localhost:8080 &
 
 install:
     - composer install --no-interaction --prefer-dist
