@@ -20,6 +20,9 @@ jobs:
             matrix:
                 php: [ 7.3 ]
 
+        env:
+            SYMFONY_ENDPOINT: "https://flex.symfony.com/r/github.com/symfony/recipes-contrib/1022"
+
         steps:
             -
                 uses: actions/checkout@v2
