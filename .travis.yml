@@ -1,9 +1,15 @@
 language: php
 
-dist: trusty
+dist: xenial
+
+addons:
+    chrome: stable
 
 php:
     - '7.3'
+
+services:
+    - mysql
 
 cache:
     yarn: true
@@ -26,6 +32,7 @@ before_install:
     - phpenv config-rm xdebug.ini
     - echo "memory_limit=4096M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
     - mkdir -p "${MONOFONY_CACHE_DIR}"
+    - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 https://localhost:8080 &
 
 install:
     - composer install --no-interaction --prefer-dist
@@ -53,8 +60,8 @@ before_script:
 
     # Download and configure ChromeDriver
     - |
-        if [ ! -f $MONOFONY_CACHE_DIR/chromedriver ] || [ "$($MONOFONY_CACHE_DIR/chromedriver --version | grep -c 2.34)" = "0" ]; then
-            curl http://chromedriver.storage.googleapis.com/2.34/chromedriver_linux64.zip > chromedriver.zip
+        if [ ! -f $MONOFONY_CACHE_DIR/chromedriver ] || [ "$($MONOFONY_CACHE_DIR/chromedriver --version | grep -c 87.0)" = "0" ]; then
+            curl https://chromedriver.storage.googleapis.com/87.0.4280.88/chromedriver_linux64.zip > chromedriver.zip
             unzip chromedriver.zip
             chmod +x chromedriver
             mv chromedriver $MONOFONY_CACHE_DIR
