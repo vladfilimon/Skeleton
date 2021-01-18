@@ -10,9 +10,8 @@
         "monofony/fos-oauth-server-bridge": "0.5.*",
         "symfony/dotenv": "5.2.*",
         "symfony/flex": "^1.10",
-        "symfony/framework-bundle": "5.2.*",
         "symfony/monolog-bundle": "^3.6",
-        "symfony/webpack-encore-bundle": "^1.7"
+        "symfony/webpack-encore-bundle": "^1.9"
     },
     "require-dev": {
         "monofony/test-pack": "0.5.*"
