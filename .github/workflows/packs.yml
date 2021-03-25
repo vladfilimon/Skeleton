@@ -73,3 +73,7 @@ jobs:
                 run: |
                     sed -i -e "s/\#\$syliusResources/\$syliusResources/g" config/services.yaml
                     composer require monofony/api-pack
+
+            -
+                name: Run PHPUnit
+                run: vendor/bin/phpunit
