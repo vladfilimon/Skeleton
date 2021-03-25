@@ -70,6 +70,12 @@ jobs:
                 run: composer install --no-interaction
 
             -
+                name: Dump the environment
+                run: |
+                    echo "DATABASE_URL=$DATABASE_URL" >> .env.$APP_ENV
+                    composer dump-env $APP_ENV || echo APP_ENV=$APP_ENV > .env.local
+
+            -
                 name: Install api-pack
                 run: |
                     sed -i -e "s/\#\$syliusResources/\$syliusResources/g" config/services.yaml
