@@ -71,5 +71,5 @@ jobs:
             -
                 name: Install api-pack
                 run: |
-                    # sed -i -e "s/#$syliusResources/$syliusResources/g" config/services.yaml
+                    sed -i -e "s/\#\$syliusResources/\$syliusResources/g" config/services.yaml
                     composer require monofony/api-pack
