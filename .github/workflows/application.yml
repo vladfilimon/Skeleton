@@ -18,7 +18,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: [ 7.3 ]
+                php: [ 7.4, 8.0 ]
 
         env:
             SYMFONY_ENDPOINT: "https://flex.symfony.com/r/github.com/symfony/recipes-contrib/1022"
@@ -94,7 +94,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: [7.3]
+                php: [7.4, 8.0]
                 mysql: [5.7]
 
         env:
@@ -223,7 +223,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: [ 7.3 ]
+                php: [ 7.4, 8.0 ]
                 node: [ 10.x ]
                 mysql: [ 5.7 ]
 
