@@ -7,7 +7,7 @@ jobs:
     build:
         docker:
             # Specify the version you desire here
-            -   image: circleci/php:7.3-node-browsers
+            -   image: circleci/php:7.4-node-browsers
                 environment:
                     - APP_ENV: test
                     - IS_DOCTRINE_ORM_SUPPORTED: true
