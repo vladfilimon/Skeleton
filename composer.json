@@ -4,7 +4,7 @@
     "description": "A Minimal Monofony project to create applications.",
     "license": "MIT",
     "require": {
-        "php": "^7.3",
+        "php": "^7.4 || ^8.0",
         "monofony/admin-pack": "0.6.*",
         "monofony/core-pack": "0.6.*",
         "monofony/fos-oauth-server-bridge": "0.6.*",
