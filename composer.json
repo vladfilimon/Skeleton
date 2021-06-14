@@ -5,16 +5,15 @@
     "license": "MIT",
     "require": {
         "php": "^7.4 || ^8.0",
-        "monofony/admin-pack": "0.6.*",
-        "monofony/core-pack": "0.6.*",
-        "monofony/fos-oauth-server-bridge": "0.6.*",
-        "symfony/dotenv": "5.2.*",
+        "monofony/admin-pack": "0.7.*",
+        "monofony/core-pack": "0.7.*",
+        "symfony/dotenv": "5.3.*",
         "symfony/flex": "^1.12",
         "symfony/monolog-bundle": "^3.6",
         "symfony/webpack-encore-bundle": "^1.9"
     },
     "require-dev": {
-        "monofony/test-pack": "0.6.*"
+        "monofony/test-pack": "0.7.*"
     },
     "config": {
         "optimize-autoloader": true,
@@ -51,7 +50,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": true,
-            "require": "5.2.*"
+            "require": "5.3.*"
         }
     },
     "minimum-stability": "dev",
