@@ -348,3 +348,12 @@ jobs:
                     name: "Behat logs (JS, PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }})"
                     path: etc/build/
                     if-no-files-found: ignore
+
+            -
+                name: Upload Symfony logs
+                uses: actions/upload-artifact@v2
+                if: failure()
+                with:
+                    name: "Symfony logs (JS, PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }})"
+                    path: var/log/
+                    if-no-files-found: ignore
