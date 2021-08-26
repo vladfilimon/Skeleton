@@ -8,7 +8,7 @@
         "monofony/admin-pack": "0.7.*",
         "monofony/core-pack": "0.7.*",
         "symfony/dotenv": "5.3.*",
-        "symfony/flex": "^1.12",
+        "symfony/flex": "1.13.*",
         "symfony/monolog-bundle": "^3.6",
         "symfony/runtime": "5.3.*",
         "symfony/webpack-encore-bundle": "^1.9"
