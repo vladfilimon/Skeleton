@@ -85,7 +85,7 @@ jobs:
                 name: Install api-pack
                 run: |
                     sed -i -e "s/\#\$syliusResources/\$syliusResources/g" config/services.yaml
-                    composer require monofony/api-pack
+                    composer require monofony/api-pack ^0.8
 
             -
                 name: Run PHPUnit
