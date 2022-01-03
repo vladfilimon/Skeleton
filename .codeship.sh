@@ -34,7 +34,7 @@ print_header "Checking mysql version" "AppName"
 run_command "mysql --version"
 
 # Set php version
-phpenv local 7.4
+phpenv local 8.0
 run_command "php -v"
 
 # Set node version
