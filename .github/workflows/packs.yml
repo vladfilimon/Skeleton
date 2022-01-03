@@ -29,7 +29,6 @@ jobs:
             DATABASE_URL: "mysql://root:root@127.0.0.1/monofony?serverVersion=${{ matrix.mysql }}"
             SYMFONY_ENDPOINT: "https://flex.symfony.com/r/github.com/symfony/recipes-contrib/1022"
             IS_DOCTRINE_ORM_SUPPORTED: true
-            CORS_ALLOW_ORIGIN: "^https?://(localhost|127\.0\.0\.1)(:[0-9]+)?$"
 
         steps:
             -   uses: actions/checkout@v2
