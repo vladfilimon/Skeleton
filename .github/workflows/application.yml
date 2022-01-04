@@ -227,7 +227,7 @@ jobs:
 
             -
                 name: Load fixtures
-                run: bin/console sylius:fixtures:load default --no-interaction
+                run: bin/console doctrine:fixtures:load --no-interaction
 
             -
                 name: Run PHPSpec
