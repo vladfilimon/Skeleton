@@ -18,7 +18,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: [ 7.4, 8.0 ]
+                php: [ 8.0 ]
 
         env:
             SYMFONY_ENDPOINT: "https://flex.symfony.com/r/github.com/symfony/recipes-contrib/1022"
@@ -86,16 +86,19 @@ jobs:
                 run: vendor/bin/phpstan analyse -c phpstan.neon -l 1 src
                 if: always() && steps.end-of-setup.outcome == 'success'
 
-    test-application-without-frontend:
+    test-application:
         runs-on: ubuntu-18.04
 
-        name: "Test non-JS application (PHP ${{ matrix.php }}, MySQL ${{ matrix.mysql }})"
+        name: "Test application (PHP ${{ matrix.php }}, MySQL ${{ matrix.mysql }})"
+
+        timeout-minutes: 25
 
         strategy:
             fail-fast: false
             matrix:
-                php: [7.4, 8.0]
-                mysql: [5.7]
+                php: ["8.0"]
+                node: ["14.x"]
+                mysql: ["5.7"]
 
         env:
             APP_ENV: test
@@ -104,146 +107,6 @@ jobs:
 
         steps:
             -   uses: actions/checkout@v2
-
-            -
-                name: Shutdown default MySQL
-                run: sudo service mysql stop
-
-            -
-                name: Setup MySQL
-                uses: mirromutth/mysql-action@v1.1
-                with:
-                    mysql version: "${{ matrix.mysql }}"
-                    mysql root password: "root"
-
-            -
-                name: Setup PHP
-                uses: shivammathur/setup-php@v2
-                with:
-                    php-version: "${{ matrix.php }}"
-                    ini-values: date.timezone=Europe/Warsaw, opcache.enable=1, opcache.enable_cli=1, opcache.memory_consumption=256, opcache.max_accelerated_files=32531, opcache.interned_strings_buffer=8, opcache.validate_timestamps=0, opcache.save_comments=1, opcache.fast_shutdown=0
-                    extensions: intl, gd, opcache, mysql, pdo_mysql, :xdebug
-                    tools: symfony
-                    coverage: none
-
-            -
-                name: Get Composer cache directory
-                id: composer-cache
-                run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-            -
-                name: Cache Composer
-                uses: actions/cache@v2
-                with:
-                    path: ${{ steps.composer-cache.outputs.dir }}
-                    key: ${{ runner.os }}-php-${{ matrix.php }}-symfony-${{ matrix.symfony }}-composer-${{ hashFiles('**/composer.json **/composer.lock') }}
-                    restore-keys: |
-                        ${{ runner.os }}-php-${{ matrix.php }}-symfony-${{ matrix.symfony }}-composer-
-
-            -
-                name: Install dependencies
-                if: steps.composer-cache.outputs.cache-hit != 'true'
-                run: composer install --no-interaction
-
-            -
-                name: Dump the environment
-                run: |
-                    echo "DATABASE_URL=$DATABASE_URL" >> .env.$APP_ENV
-                    composer dump-env $APP_ENV || echo APP_ENV=$APP_ENV > .env.local
-
-            -
-                name: Cache Node packages
-                uses: actions/cache@v2
-                with:
-                    path: '**/node_modules'
-                    key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-
-            -
-                name: Install node packages
-                if: steps.yarn-cache.outputs.cache-hit != 'true'
-                run: |
-                    yarn install
-                    yarn build
-
-            -
-                name: Warmup cache
-                run: bin/console cache:warmup
-
-            -   name: Prepare application database
-                run: |
-                    APP_DEBUG=1 bin/console doctrine:database:create -vvv
-                    bin/console doctrine:migrations:migrate -n -vvv
-
-            -
-                name: Test provided migrations
-                run: |
-                    bin/console doctrine:migrations:migrate first --no-interaction
-                    bin/console doctrine:migrations:migrate latest --no-interaction
-
-            -
-                name: Test installer
-                run: bin/console app:install --no-interaction -vvv
-
-            -
-                name: Load fixtures
-                run: bin/console sylius:fixtures:load default --no-interaction
-
-            -
-                name: Run PHPSpec
-                run: phpdbg -qrr vendor/bin/phpspec run --no-interaction -f dot
-
-            -
-                name: Run PHPUnit
-                run: vendor/bin/phpunit
-
-            -
-                name: Run CLI Behat
-                run: vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@cli && ~@todo" || vendor/bin/behat --strict --no-interaction -vvv -f progress --tags="@cli && ~@todo" --rerun
-
-            -
-                name: Run non-JS Behat
-                run: vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="~@javascript && ~@todo && ~@cli" || vendor/bin/behat --strict --no-interaction -vvv -f progress --tags="~@javascript && ~@todo && ~@cli" --rerun
-
-            -
-                name: Upload Behat logs
-                uses: actions/upload-artifact@v2
-                if: failure()
-                with:
-                    name: "Behat logs (non-JS, PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }})"
-                    path: etc/build/
-                    if-no-files-found: ignore
-
-            -
-                name: Upload Symfony logs
-                uses: actions/upload-artifact@v2
-                if: failure()
-                with:
-                    name: "Symfony logs (non-JS, PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }})"
-                    path: var/log/
-                    if-no-files-found: ignore
-
-    test-application-with-frontend:
-        runs-on: ubuntu-18.04
-
-        name: "Test JS application (PHP ${{ matrix.php }}, MySQL ${{ matrix.mysql }})"
-
-        timeout-minutes: 25
-
-        strategy:
-            fail-fast: false
-            matrix:
-                php: [ 7.4, 8.0 ]
-                node: [ 10.x ]
-                mysql: [ 5.7 ]
-
-        env:
-            APP_ENV: test
-            DATABASE_URL: "mysql://root:root@127.0.0.1/monofony?serverVersion=${{ matrix.mysql }}"
-            SYMFONY_ENDPOINT: "https://flex.symfony.com/r/github.com/symfony/recipes-contrib/1022"
-
-        steps:
-            -
-                uses: actions/checkout@v2
 
             -
                 name: Shutdown default MySQL
@@ -289,7 +152,8 @@ jobs:
                         ${{ runner.os }}-php-${{ matrix.php }}-symfony-${{ matrix.symfony }}-composer-
 
             -
-                name: Install PHP dependencies
+                name: Install dependencies
+                if: steps.composer-cache.outputs.cache-hit != 'true'
                 run: composer install --no-interaction
 
             -
@@ -324,6 +188,7 @@ jobs:
                 name: Dump the environment
                 run: |
                     echo "DATABASE_URL=$DATABASE_URL" >> .env.$APP_ENV
+                    composer dump-env $APP_ENV
 
             -
                 name: Warmup cache
@@ -346,6 +211,41 @@ jobs:
                     yarn build
 
             -
+                name: Validate Doctrine mapping
+                run: make validate-doctrine-schema
+                if: always() && steps.end-of-setup.outcome == 'success'
+
+            -
+                name: Test provided migrations
+                run: |
+                    bin/console doctrine:migrations:migrate first --no-interaction
+                    bin/console doctrine:migrations:migrate latest --no-interaction
+
+            -
+                name: Test installer
+                run: bin/console app:install --no-interaction -vvv
+
+            -
+                name: Load fixtures
+                run: bin/console doctrine:fixtures:load --no-interaction
+
+            -
+                name: Run PHPSpec
+                run: phpdbg -qrr vendor/bin/phpspec run --no-interaction -f dot
+
+            -
+                name: Run PHPUnit
+                run: vendor/bin/phpunit
+
+            -
+                name: Run CLI Behat
+                run: vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@cli && ~@todo" || vendor/bin/behat --strict --no-interaction -vvv -f progress --tags="@cli && ~@todo" --rerun
+
+            -
+                name: Run non-JS Behat
+                run: vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="~@javascript && ~@todo && ~@cli" || vendor/bin/behat --strict --no-interaction -vvv -f progress --tags="~@javascript && ~@todo && ~@cli" --rerun
+
+            -
                 name: Run JS Behat
                 run: vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@javascript && ~@todo && ~@cli" || vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@javascript && ~@todo && ~@cli" --rerun || vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@javascript && ~@todo && ~@cli" --rerun
 
@@ -354,7 +254,7 @@ jobs:
                 uses: actions/upload-artifact@v2
                 if: failure()
                 with:
-                    name: "Behat logs (JS, PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }})"
+                    name: "Behat logs (PHP ${{ matrix.php }})"
                     path: etc/build/
                     if-no-files-found: ignore
 
@@ -363,6 +263,6 @@ jobs:
                 uses: actions/upload-artifact@v2
                 if: failure()
                 with:
-                    name: "Symfony logs (JS, PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }})"
+                    name: "Symfony logs (PHP ${{ matrix.php }})"
                     path: var/log/
                     if-no-files-found: ignore
