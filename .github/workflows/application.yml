@@ -20,9 +20,6 @@ jobs:
             matrix:
                 php: [ 8.0 ]
 
-        env:
-            SYMFONY_ENDPOINT: "https://flex.symfony.com/r/github.com/symfony/recipes-contrib/1022"
-
         steps:
             -
                 uses: actions/checkout@v2
@@ -103,7 +100,6 @@ jobs:
         env:
             APP_ENV: test
             DATABASE_URL: "mysql://root:root@127.0.0.1/monofony?serverVersion=${{ matrix.mysql }}"
-            SYMFONY_ENDPOINT: "https://flex.symfony.com/r/github.com/symfony/recipes-contrib/1022"
 
         steps:
             -   uses: actions/checkout@v2
