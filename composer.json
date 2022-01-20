@@ -52,7 +52,11 @@
     "extra": {
         "symfony": {
             "allow-contrib": true,
-            "require": "5.4.*"
+            "require": "5.4.*",
+            "endpoint": [
+                "https://raw.githubusercontent.com/symfony/recipes-contrib/flex/pull-1342/index.json",
+                "flex://defaults"
+            ]
         }
     },
     "minimum-stability": "dev",

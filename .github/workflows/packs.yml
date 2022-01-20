@@ -27,7 +27,6 @@ jobs:
         env:
             APP_ENV: test
             DATABASE_URL: "mysql://root:root@127.0.0.1/monofony?serverVersion=${{ matrix.mysql }}"
-            SYMFONY_ENDPOINT: "https://raw.githubusercontent.com/symfony/recipes-contrib/flex/pull-1342/index.json"
             IS_DOCTRINE_ORM_SUPPORTED: true
             CORS_ALLOW_ORIGIN: "*"
 
