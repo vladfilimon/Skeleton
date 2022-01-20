@@ -21,7 +21,7 @@ jobs:
                 php: [ 8.0 ]
 
         env:
-            SYMFONY_ENDPOINT: "https://flex.symfony.com/r/github.com/symfony/recipes-contrib/1022"
+            SYMFONY_ENDPOINT: "https://raw.githubusercontent.com/symfony/recipes-contrib/flex/pull-1342/index.json"
 
         steps:
             -
@@ -103,7 +103,7 @@ jobs:
         env:
             APP_ENV: test
             DATABASE_URL: "mysql://root:root@127.0.0.1/monofony?serverVersion=${{ matrix.mysql }}"
-            SYMFONY_ENDPOINT: "https://flex.symfony.com/r/github.com/symfony/recipes-contrib/1022"
+            SYMFONY_ENDPOINT: "https://raw.githubusercontent.com/symfony/recipes-contrib/flex/pull-1342/index.json"
 
         steps:
             -   uses: actions/checkout@v2

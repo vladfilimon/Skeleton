@@ -13,7 +13,7 @@ jobs:
                     - IS_DOCTRINE_ORM_SUPPORTED: true
                     - MONOFONY_BUILD_DIR: etc/build
                     - DATABASE_URL: mysql://root@127.0.0.1:3306/monofony_%kernel.environment%?serverVersion=5.7
-                    - SYMFONY_ENDPOINT: https://flex.symfony.com/r/github.com/symfony/recipes-contrib/1022
+                    - SYMFONY_ENDPOINT: https://raw.githubusercontent.com/symfony/recipes-contrib/flex/pull-1342/index.json
 
             # Specify service dependencies here if necessary
             # CircleCI maintains a library of pre-built images
