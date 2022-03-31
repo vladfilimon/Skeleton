@@ -158,16 +158,8 @@ jobs:
                 run: vendor/bin/bdi detect drivers
 
             -
-                name: Run ChromeDriver
-                run: ./drivers/chromedriver > /dev/null 2>&1 &
-
-            -
-                name: Download and configure Selenium
-                run: curl http://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar > selenium.jar
-
-            -
                 name: Run Selenium
-                run: java -Dwebdriver.chrome.driver=./drivers/chromedriver -jar selenium.jar > /dev/null 2>&1 &
+                run: vendor/bin/selenium-server-standalone -Dwebdriver.chrome.driver=drivers/chromedriver > /dev/null 2>&1 &
 
             -
                 name: Setup Node
