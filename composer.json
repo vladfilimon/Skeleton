@@ -16,6 +16,7 @@
         "symfony/webpack-encore-bundle": "^1.9"
     },
     "require-dev": {
+        "dbrekelmans/bdi": "^1.0",
         "monofony/test-pack": "^0.8@beta",
         "symfony/phpunit-bridge": "^5.4"
     },

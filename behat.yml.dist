@@ -9,8 +9,6 @@ default:
             snippets: false
 
     extensions:
-        DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: ~
-
         FriendsOfBehat\MinkDebugExtension:
             directory: etc/build
             clean_start: false
@@ -19,15 +17,11 @@ default:
         Behat\MinkExtension:
             files_path: "%paths.base%/tests/Resources/"
             base_url: "https://127.0.0.1:8080/"
+            javascript_session: chrome
             default_session: symfony
-            javascript_session: chrome_headless
             sessions:
                 symfony:
                     symfony: ~
-                chrome_headless:
-                    chrome:
-                        api_url: http://127.0.0.1:9222
-                        validate_certificate: false
                 chrome:
                     selenium2:
                         browser: chrome
@@ -35,12 +29,15 @@ default:
                             browserName: chrome
                             browser: chrome
                             version: ""
-                            chrome:
-                                switches:
-                                - "start-fullscreen"
-                                - "start-maximized"
-                                - "no-sandbox"
                             extra_capabilities:
+                                chromeOptions:
+                                    args:
+                                        - "start-fullscreen"
+                                        - "start-maximized"
+                                        - "no-sandbox"
+                                        - "--headless"
+                                        - "--window-size=1920,1080"
+                                        - "--disable-gpu"
                                 acceptSslCerts: true
                                 acceptInsecureCerts: true
                                 unexpectedAlertBehaviour: accept
@@ -48,7 +45,7 @@ default:
         FriendsOfBehat\SymfonyExtension:
             bootstrap: tests/bootstrap.php
 
-        FriendsOfBehat\VariadicExtension: ~
+        FriendsOfBehat\VariadicExtension: null
 
     gherkin:
         filters:
