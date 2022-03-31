@@ -18,6 +18,7 @@
     "require-dev": {
         "dbrekelmans/bdi": "^1.0",
         "monofony/test-pack": "^0.8@beta",
+        "robertfausk/behat-panther-extension": "^1.1",
         "symfony/phpunit-bridge": "^5.4"
     },
     "config": {

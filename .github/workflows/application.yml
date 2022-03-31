@@ -86,7 +86,7 @@ jobs:
     test-application:
         runs-on: ubuntu-18.04
 
-        name: "Test application (PHP ${{ matrix.php }}, MySQL ${{ matrix.mysql }})"
+        name: "Test application (PHP ${{ matrix.php }}, Behat driver ${{ matrix.behat_driver }}), MySQL ${{ matrix.mysql }})"
 
         timeout-minutes: 25
 
@@ -96,6 +96,7 @@ jobs:
                 php: ["8.0"]
                 node: ["14.x"]
                 mysql: ["5.7"]
+                behat_driver: ["panther", "chrome"]
 
         env:
             APP_ENV: test
@@ -130,6 +131,11 @@ jobs:
                 run: symfony server:ca:install
 
             -
+                name: Configure Behat driver
+                run: |
+                    sed -i -e 's/javascript_session: chrome/javascript_session: ${{ matrix.behat_driver }}/g' behat.yml.dist
+
+            -
                 name: Run Chrome Headless
                 run: google-chrome-stable --enable-automation --disable-background-networking --no-default-browser-check --no-first-run --disable-popup-blocking --disable-default-apps --disable-translate --disable-extensions --no-sandbox --enable-features=Metal --headless --remote-debugging-port=9222 --window-size=2880,1800 --proxy-server='direct://' --proxy-bypass-list='*' https://127.0.0.1 > /dev/null 2>&1 &
 
@@ -159,6 +165,7 @@ jobs:
 
             -
                 name: Run Selenium
+                if: matrix.behat_driver == 'chrome'
                 run: vendor/bin/selenium-server-standalone -Dwebdriver.chrome.driver=drivers/chromedriver > /dev/null 2>&1 &
 
             -
