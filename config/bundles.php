@@ -16,7 +16,6 @@ return [
     Sylius\Bundle\CustomerBundle\SyliusCustomerBundle::class => ['all' => true],
     Sylius\Bundle\UserBundle\SyliusUserBundle::class => ['all' => true],
     Symfony\Bundle\SecurityBundle\SecurityBundle::class => ['all' => true],
-    FOS\OAuthServerBundle\FOSOAuthServerBundle::class => ['all' => true],
     Monofony\Bundle\CoreBundle\MonofonyCoreBundle::class => ['all' => true],
     Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle::class => ['all' => true],
     Symfony\Bundle\WebProfilerBundle\WebProfilerBundle::class => ['dev' => true, 'test' => true],
