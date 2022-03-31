@@ -42,24 +42,23 @@ security:
                 target: sylius_backend_login
             anonymous: true
 
-# Uncomment if you use monofony/api-pack
-#        api_login:
-#            pattern: ^/api/authentication_token
-#            provider: sylius_app_user_provider
-#            stateless: true
-#            json_login:
-#                check_path: /api/authentication_token
-#                success_handler: lexik_jwt_authentication.handler.authentication_success
-#                failure_handler: lexik_jwt_authentication.handler.authentication_failure
-#
-#        api:
-#            pattern: ^/api
-#            provider: sylius_app_user_provider
-#            stateless: true
-#            anonymous: true
-#            guard:
-#                authenticators:
-#                    - lexik_jwt_authentication.jwt_token_authenticator
+        api_login:
+            pattern: ^/api/authentication_token
+            provider: sylius_app_user_provider
+            stateless: true
+            json_login:
+                check_path: /api/authentication_token
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+
+        api:
+            pattern: ^/api
+            provider: sylius_app_user_provider
+            stateless: true
+            anonymous: true
+            guard:
+                authenticators:
+                    - lexik_jwt_authentication.jwt_token_authenticator
 
         app:
             switch_user: true
