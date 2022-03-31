@@ -153,6 +153,16 @@ jobs:
                 run: composer install --no-interaction
 
             -
+                name: Run Selenium
+                if: matrix.behat_driver == 'chrome'
+                run: vendor/bin/selenium-server-standalone -Dwebdriver.chrome.driver=drivers/chromedriver > /dev/null 2>&1 &
+
+            -
+                name: Install behat driver
+                if: matrix.behat_driver != 'chrome_headless'
+                run: vendor/bin/bdi detect drivers
+
+            -
                 name: Setup Node
                 uses: actions/setup-node@v1
                 with:

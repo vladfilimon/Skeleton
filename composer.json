@@ -9,6 +9,7 @@
         "doctrine/migrations": "3.2.*",
         "monofony/admin-pack": "^0.8@beta",
         "monofony/core-pack": "^0.8@beta",
+        "se/selenium-server-standalone": "2.*",
         "symfony/dotenv": "5.4.*",
         "symfony/flex": "^2.0",
         "symfony/monolog-bundle": "^3.6",
@@ -16,6 +17,7 @@
         "symfony/webpack-encore-bundle": "^1.9"
     },
     "require-dev": {
+        "dbrekelmans/bdi": "^1.0",
         "monofony/test-pack": "^0.8@beta",
         "symfony/phpunit-bridge": "^5.4"
     },
