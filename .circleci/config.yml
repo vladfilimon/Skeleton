@@ -93,21 +93,11 @@ jobs:
                     command: |
                         wget https://get.symfony.com/cli/installer -O - | bash
             -   run:
-                    name: Download and configure ChromeDriver
-                    command: |
-                        curl http://chromedriver.storage.googleapis.com/2.34/chromedriver_linux64.zip > chromedriver.zip
-                        unzip chromedriver.zip
-                        chmod +x chromedriver
-            -   run:
-                    name: Run ChromeDriver
-                    command: chromedriver
-                    background: true
-            -   run:
-                    name: Download and configure Selenium
-                    command: curl http://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar > selenium.jar
+                    name: Download Behat Drivers
+                    command: vendor/bin/bdi detect drivers
             -   run:
                     name: Run Selenium
-                    command: java -Dwebdriver.chrome.driver=chromedriver -jar selenium.jar
+                    command: vendor/bin/selenium-server-standalone -Dwebdriver.chrome.driver=drivers/chromedriver
                     background: true
             -   run:
                     name: Run webserver
@@ -117,7 +107,7 @@ jobs:
 
             # run tests
             -   run: composer validate --strict
-            -   run: ~/.symfony/bin/symfony security:check security:check
+            -   run: ~/.symfony/bin/symfony security:check
             -   run: bin/console doctrine:schema:validate -vvv
             -   run: bin/console lint:twig templates
             -   run: bin/console lint:yaml config --parse-tags
@@ -126,6 +116,6 @@ jobs:
             -   run: vendor/bin/psalm --show-info=false
             -   run: vendor/bin/phpunit
             -   run: bin/console app:install --no-interaction -vvv
-            -   run: bin/console sylius:fixtures:load default --no-interaction
+            -   run: bin/console doctrine:fixtures:load --no-interaction
             -   run: vendor/bin/behat --strict -vvv --no-interaction -f progress || vendor/bin/behat --strict -vvv --no-interaction -f progress --rerun
             -   run: (bin/console doctrine:migrations:migrate first --no-interaction && bin/console doctrine:migrations:migrate latest --no-interaction)
