@@ -133,7 +133,7 @@ jobs:
             -
                 name: Configure Behat driver
                 run: |
-                    sed -i -e 's/javascript_session: */javascript_session: ${{ matrix.behat_driver }}/g' behat.yml.dist
+                    sed -i -e 's/javascript_session: chrome/javascript_session: ${{ matrix.behat_driver }}/g' behat.yml.dist
 
             -
                 name: Run Chrome Headless
