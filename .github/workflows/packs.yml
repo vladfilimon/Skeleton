@@ -85,6 +85,11 @@ jobs:
                 name: Install api-pack
                 run: |
                     sed -i -e "s/\#\$syliusResources/\$syliusResources/g" config/services.yaml
+                    sed -i -e "s/\#success_handler/success_handler/g" config/packages/security.yaml
+                    sed -i -e "s/\#failure_handler/failure_handler/g" config/packages/security.yaml
+                    sed -i -e "s/\#guard/guard/g" config/packages/security.yaml
+                    sed -i -e "s/\#authenticators/authenticators/g" config/packages/security.yaml
+                    sed -i -e "s/\#- lexik_jwt_authentication/- lexik_jwt_authentication/g" config/packages/security.yaml
                     composer require monofony/api-pack ^0.8
 
             -
