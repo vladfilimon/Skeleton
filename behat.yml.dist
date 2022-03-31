@@ -15,7 +15,7 @@ default:
             screenshot: true
 
         Behat\MinkExtension:
-            files_path: "%paths.base%/src/Monofony/MetaPack/CoreMeta/.recipe/tests/Resources/"
+            files_path: "%paths.base%/tests/Resources/"
             base_url: "https://127.0.0.1:8080/"
             javascript_session: chrome
             default_session: symfony
