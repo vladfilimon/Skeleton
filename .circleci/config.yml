@@ -97,7 +97,7 @@ jobs:
                     command: vendor/bin/bdi detect drivers
             -   run:
                     name: Run Selenium
-                    command: endor/bin/selenium-server-standalone -Dwebdriver.chrome.driver=drivers/chromedriver
+                    command: vendor/bin/selenium-server-standalone -Dwebdriver.chrome.driver=drivers/chromedriver
                     background: true
             -   run:
                     name: Run webserver
