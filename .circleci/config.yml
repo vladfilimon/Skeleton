@@ -7,7 +7,7 @@ jobs:
     build:
         docker:
             # Specify the version you desire here
-            -   image: circleci/php:8.0-node-browsers
+            -   image: circleci/php:8.0-browsers
                 environment:
                     - APP_ENV: test
                     - IS_DOCTRINE_ORM_SUPPORTED: true
@@ -25,10 +25,30 @@ jobs:
 
         steps:
             - checkout
+            -   run:
+                    name: Install nvm
+                    command: |
+                        (cd .. && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash && echo 'export NVM_DIR=$HOME/.nvm' >> $BASH_ENV && echo 'source $NVM_DIR/nvm.sh' >> $BASH_ENV)
+
+            -   run:
+                    name: Set node to version required by application for future circleci steps
+                    command: |
+                        nvm install 12
+                        NODE_VERSION=$(node -v)
+                        nvm alias default ${NODE_VERSION//v}
+
+            -   run:
+                    name: Check current version of node
+                    command: node -v
+
+            -   run:
+                    name: Install yarn
+                    command: npm install -g yarn
 
             -   run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
             -   run: sudo docker-php-ext-install zip
             -   run: sudo docker-php-ext-install pdo_mysql
+            -   run: sudo apt install python2
 
             # Download and cache dependencies
 #            -   restore_cache:
