@@ -203,84 +203,84 @@ jobs:
                 with:
                     node-version: "${{ matrix.node }}"
 
-                -
-                    name: Get Yarn cache directory
-                    id: yarn-cache
-                    run: echo "::set-output name=dir::$(yarn cache dir)"
+            -
+                name: Get Yarn cache directory
+                id: yarn-cache
+                run: echo "::set-output name=dir::$(yarn cache dir)"
 
-                -
-                    name: Cache Yarn
-                    uses: actions/cache@v2
-                    with:
-                        path: ${{ steps.yarn-cache.outputs.dir }}
-                        key: ${{ runner.os }}-node-${{ matrix.node }}-yarn-${{ hashFiles('**/package.json **/yarn.lock') }}
-                        restore-keys: |
-                            ${{ runner.os }}-node-${{ matrix.node }}-yarn-
+            -
+                name: Cache Yarn
+                uses: actions/cache@v2
+                with:
+                    path: ${{ steps.yarn-cache.outputs.dir }}
+                    key: ${{ runner.os }}-node-${{ matrix.node }}-yarn-${{ hashFiles('**/package.json **/yarn.lock') }}
+                    restore-keys: |
+                        ${{ runner.os }}-node-${{ matrix.node }}-yarn-
 
-                -
-                    name: Install JS dependencies
-                    run: yarn install
+            -
+                name: Install JS dependencies
+                run: yarn install
 
-                -
-                    name: Validate Yarn packages
-                    run: yarn check
+            -
+                name: Validate Yarn packages
+                run: yarn check
 
-                -
-                    name: Dump the environment
-                    run: |
-                        echo "DATABASE_URL=$DATABASE_URL" >> .env.$APP_ENV
-                        composer dump-env $APP_ENV
+            -
+                name: Dump the environment
+                run: |
+                    echo "DATABASE_URL=$DATABASE_URL" >> .env.$APP_ENV
+                    composer dump-env $APP_ENV
 
-                -
-                    name: Warmup cache
-                    run: bin/console cache:warmup
+            -
+                name: Warmup cache
+                run: bin/console cache:warmup
 
-                -
-                    name: Run webserver
-                    run: symfony server:start --port=8080 --dir=public --daemon
+            -
+                name: Run webserver
+                run: symfony server:start --port=8080 --dir=public --daemon
 
-                -
-                    name: Prepare application database
-                    run: |
-                        APP_DEBUG=1 bin/console doctrine:database:create -vvv
-                        bin/console doctrine:migrations:migrate -n -vvv
+            -
+                name: Prepare application database
+                run: |
+                    APP_DEBUG=1 bin/console doctrine:database:create -vvv
+                    bin/console doctrine:migrations:migrate -n -vvv
 
-                -
-                    name: Build assets
-                    run: |
-                        bin/console assets:install public -vvv
-                        yarn build
+            -
+                name: Build assets
+                run: |
+                    bin/console assets:install public -vvv
+                    yarn build
 
-                -
-                    name: Run PHPSpec
-                    run: phpdbg -qrr vendor/bin/phpspec run --no-interaction -f dot
+            -
+                name: Run PHPSpec
+                run: phpdbg -qrr vendor/bin/phpspec run --no-interaction -f dot
 
-                -
-                    name: Run CLI Behat
-                    run: vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@cli && ~@todo" || vendor/bin/behat --strict --no-interaction -vvv -f progress --tags="@cli && ~@todo" --rerun
+            -
+                name: Run CLI Behat
+                run: vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@cli && ~@todo" || vendor/bin/behat --strict --no-interaction -vvv -f progress --tags="@cli && ~@todo" --rerun
 
-                -
-                    name: Run non-JS Behat
-                    run: vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="~@javascript && ~@todo && ~@cli" || vendor/bin/behat --strict --no-interaction -vvv -f progress --tags="~@javascript && ~@todo && ~@cli" --rerun
+            -
+                name: Run non-JS Behat
+                run: vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="~@javascript && ~@todo && ~@cli" || vendor/bin/behat --strict --no-interaction -vvv -f progress --tags="~@javascript && ~@todo && ~@cli" --rerun
 
-                -
-                    name: Run JS Behat
-                    run: vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@javascript && ~@todo && ~@cli" || vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@javascript && ~@todo && ~@cli" --rerun || vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@javascript && ~@todo && ~@cli" --rerun
+            -
+                name: Run JS Behat
+                run: vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@javascript && ~@todo && ~@cli" || vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@javascript && ~@todo && ~@cli" --rerun || vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@javascript && ~@todo && ~@cli" --rerun
 
-                -
-                    name: Upload Behat logs
-                    uses: actions/upload-artifact@v2
-                    if: failure()
-                    with:
-                        name: "Behat logs (PHP ${{ matrix.php }})"
-                        path: etc/build/
-                        if-no-files-found: ignore
+            -
+                name: Upload Behat logs
+                uses: actions/upload-artifact@v2
+                if: failure()
+                with:
+                    name: "Behat logs (PHP ${{ matrix.php }})"
+                    path: etc/build/
+                    if-no-files-found: ignore
 
-                -
-                    name: Upload Symfony logs
-                    uses: actions/upload-artifact@v2
-                    if: failure()
-                    with:
-                        name: "Symfony logs (PHP ${{ matrix.php }})"
-                        path: var/log/
-                        if-no-files-found: ignore
+            -
+                name: Upload Symfony logs
+                uses: actions/upload-artifact@v2
+                if: failure()
+                with:
+                    name: "Symfony logs (PHP ${{ matrix.php }})"
+                    path: var/log/
+                    if-no-files-found: ignore
