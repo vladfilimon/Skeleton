@@ -21,7 +21,6 @@ jobs:
             fail-fast: false
             matrix:
                 php: [ 8.0 ]
-                node: [ 10.x ]
                 mysql: [ 5.7 ]
 
         env:
@@ -164,6 +163,7 @@ jobs:
                 name: Install front-pack
                 run: |
                     sed -i -e "s/\#- suites/\- suites/g" config/behat/suites.yaml
+                    sed -i -e 's/\/\/ const frontendConfig/const frontendConfig/' webpack.config.js
                     sed -i -e 's/module\.exports \= \[backendConfig\]\;/\/\/ module\.exports \= \[backendConfig\]\;/' webpack.config.js
                     sed -i -e 's/\/\/ module\.exports \= \[backendConfig, frontendConfig\]\;/module\.exports \= \[backendConfig, frontendConfig\]\;/' webpack.config.js
                     composer require monofony/front-pack ^0.8
