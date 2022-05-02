@@ -13,6 +13,7 @@
         "symfony/flex": "^2.0",
         "symfony/monolog-bundle": "^3.6",
         "symfony/runtime": "5.4.*",
+        "symfony/swiftmailer-bundle": "^3.5",
         "symfony/webpack-encore-bundle": "^1.9"
     },
     "require-dev": {
@@ -61,7 +62,8 @@
     "extra": {
         "symfony": {
             "allow-contrib": true,
-            "require": "5.4.*"
+            "require": "5.4.*",
+            "endpoint": "flex://defaults"
         }
     },
     "minimum-stability": "dev",

@@ -262,6 +262,10 @@ jobs:
                 run: vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@javascript && ~@todo && ~@cli" || vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@javascript && ~@todo && ~@cli" --rerun || vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@javascript && ~@todo && ~@cli" --rerun
 
             -
+                name: Check PROD Requirements
+                run: composer dump-env PROD && APP_ENV=PROD composer install --no-dev --no-interaction --prefer-dist
+
+            -
                 name: Upload Behat logs
                 uses: actions/upload-artifact@v2
                 if: failure()
