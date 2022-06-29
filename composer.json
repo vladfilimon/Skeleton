@@ -46,7 +46,7 @@
         ]
     },
     "conflict": {
-        "sylius/ui-bundle": "1.11.6",
+        "sylius/ui-bundle": "^1.11.6",
         "symfony/symfony": "*"
     },
     "extra": {
