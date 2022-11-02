@@ -7,20 +7,20 @@
         "php": "^8.0",
         "doctrine/doctrine-migrations-bundle": "3.1.*",
         "doctrine/migrations": "3.2.*",
-        "monofony/admin-pack": "^0.8@beta",
-        "monofony/core-pack": "^0.8@beta",
+        "monofony/admin-pack": "^0.9@alpha",
+        "monofony/core-pack": "^0.9@alpha",
         "symfony/dotenv": "5.4.*",
         "symfony/flex": "^2.0",
         "symfony/monolog-bundle": "^3.6",
-        "symfony/runtime": "5.4.*",
+        "symfony/runtime": "^5.4 || ^6.0",
         "symfony/swiftmailer-bundle": "^3.5",
         "symfony/webpack-encore-bundle": "^1.9"
     },
     "require-dev": {
         "dbrekelmans/bdi": "^1.0",
-        "monofony/test-pack": "^0.8@beta",
+        "monofony/test-pack": "^0.9@alpha",
         "robertfausk/behat-panther-extension": "^1.1",
-        "symfony/phpunit-bridge": "^5.4"
+        "symfony/phpunit-bridge": "^5.4 || ^6.0"
     },
     "config": {
         "allow-plugins": {
@@ -57,13 +57,12 @@
         ]
     },
     "conflict": {
-        "sylius/ui-bundle": "^1.11.6",
         "symfony/symfony": "*"
     },
     "extra": {
         "symfony": {
             "allow-contrib": true,
-            "require": "5.4.*",
+            "require": "6.1.*",
             "endpoint": "flex://defaults"
         }
     },
