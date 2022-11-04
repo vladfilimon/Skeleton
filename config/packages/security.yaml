@@ -81,7 +81,6 @@ security:
             logout:
                 path: app_frontend_logout
                 target: app_frontend_homepage
-            anonymous: true
 
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
