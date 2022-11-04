@@ -20,7 +20,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: [ "8.0", "8.1" ]
+                php: [ "8.1" ]
                 mysql: [ 5.7 ]
 
         env:
@@ -28,6 +28,7 @@ jobs:
             DATABASE_URL: "mysql://root:root@127.0.0.1/monofony?serverVersion=${{ matrix.mysql }}"
             IS_DOCTRINE_ORM_SUPPORTED: true
             CORS_ALLOW_ORIGIN: "*"
+            MAILER_DSN: null://null
 
         steps:
             -   uses: actions/checkout@v2
@@ -86,10 +87,25 @@ jobs:
                     sed -i -e "s/\#\$syliusResources/\$syliusResources/g" config/services.yaml
                     sed -i -e "s/\#success_handler/success_handler/g" config/packages/security.yaml
                     sed -i -e "s/\#failure_handler/failure_handler/g" config/packages/security.yaml
-                    sed -i -e "s/\#guard/guard/g" config/packages/security.yaml
-                    sed -i -e "s/\#authenticators/authenticators/g" config/packages/security.yaml
-                    sed -i -e "s/\#- lexik_jwt_authentication/- lexik_jwt_authentication/g" config/packages/security.yaml
-                    composer require monofony/api-pack ^0.8
+                    sed -i -e "s/\#entry_point/entry_point/g" config/packages/security.yaml
+                    sed -i -e "s/\#jwt/jwt/g" config/packages/security.yaml
+                    sed -i -e "s/\#refresh_jwt/refresh_jwt/g" config/packages/security.yaml
+                    sed -i -e "s/\#check_path/check_path/g" config/packages/security.yaml
+                    cat >> src/Entity/RefreshToken.php<< EOF
+                    <?php
+                    
+                    namespace App\Entity;
+                    
+                    use Doctrine\ORM\Mapping as ORM;
+                    use Gesdinet\JWTRefreshTokenBundle\Entity\RefreshToken as BaseRefreshToken;
+                    
+                    #[ORM\Entity]
+                    #[ORM\Table(name: 'refresh_tokens')]
+                    class RefreshToken extends BaseRefreshToken
+                    {
+                    }
+                    EOF
+                    composer require monofony/api-pack ^0.9@alpha
 
             -
                 name: Run PHPUnit
@@ -105,7 +121,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: [ 8.0 ]
+                php: [ 8.1 ]
                 node: [ 12.x ]
                 mysql: [ 5.7 ]
                 behat_driver: ["panther", "chrome"]
@@ -113,6 +129,7 @@ jobs:
         env:
             APP_ENV: test
             DATABASE_URL: "mysql://root:root@127.0.0.1/monofony?serverVersion=${{ matrix.mysql }}"
+            MAILER_DSN: null://null
 
         steps:
             -   uses: actions/checkout@v2
@@ -166,7 +183,7 @@ jobs:
                     sed -i -e 's/\/\/ const frontendConfig/const frontendConfig/' webpack.config.js
                     sed -i -e 's/module\.exports \= \[backendConfig\]\;/\/\/ module\.exports \= \[backendConfig\]\;/' webpack.config.js
                     sed -i -e 's/\/\/ module\.exports \= \[backendConfig, frontendConfig\]\;/module\.exports \= \[backendConfig, frontendConfig\]\;/' webpack.config.js
-                    composer require monofony/front-pack ^0.8
+                    composer require monofony/front-pack ^0.9@alpha
 
             -
                 name: Install certificates
