@@ -90,7 +90,7 @@ jobs:
                     sed -i -e "s/\#jwt/jwt/g" config/packages/security.yaml
                     sed -i -e "s/\#refresh_jwt/refresh_jwt/g" config/packages/security.yaml
                     sed -i -e "s/\#check_path/check_path/g" config/packages/security.yaml
-                    cat > /src/Entity/RefreshToken.php<< EOF
+                    cat >> src/Entity/RefreshToken.php<< EOF
                     <?php
                     
                     namespace App\Entity;
