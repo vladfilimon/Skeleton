@@ -90,6 +90,20 @@ jobs:
                     sed -i -e "s/\#jwt/jwt/g" config/packages/security.yaml
                     sed -i -e "s/\#refresh_jwt/refresh_jwt/g" config/packages/security.yaml
                     sed -i -e "s/\#check_path/check_path/g" config/packages/security.yaml
+                    cat > /src/Entity/RefreshToken.php<< EOF
+                    <?php
+                    
+                    namespace App\Entity;
+                    
+                    use Doctrine\ORM\Mapping as ORM;
+                    use Gesdinet\JWTRefreshTokenBundle\Entity\RefreshToken as BaseRefreshToken;
+                    
+                    #[ORM\Entity]
+                    #[ORM\Table(name: 'refresh_tokens')]
+                    class RefreshToken extends BaseRefreshToken
+                    {
+                    }
+                    EOF
                     composer require monofony/api-pack ^0.9@alpha
 
             -
