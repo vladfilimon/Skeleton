@@ -10,7 +10,6 @@ return [
     Bazinga\Bundle\HateoasBundle\BazingaHateoasBundle::class => ['all' => true],
     Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => true],
     Sylius\Bundle\ResourceBundle\SyliusResourceBundle::class => ['all' => true],
-    Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle::class => ['all' => true],
     FriendsOfBehat\SymfonyExtension\Bundle\FriendsOfBehatSymfonyExtensionBundle::class => ['test' => true],
     Sylius\Bundle\MailerBundle\SyliusMailerBundle::class => ['all' => true],
     Sylius\Bundle\CustomerBundle\SyliusCustomerBundle::class => ['all' => true],
