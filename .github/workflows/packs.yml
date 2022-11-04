@@ -28,6 +28,7 @@ jobs:
             DATABASE_URL: "mysql://root:root@127.0.0.1/monofony?serverVersion=${{ matrix.mysql }}"
             IS_DOCTRINE_ORM_SUPPORTED: true
             CORS_ALLOW_ORIGIN: "*"
+            MAILER_DSN: null://null
 
         steps:
             -   uses: actions/checkout@v2
