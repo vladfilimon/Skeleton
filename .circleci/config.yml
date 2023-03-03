@@ -32,7 +32,7 @@ jobs:
             -   run:
                     name: Set node to version required by application for future circleci steps
                     command: |
-                        nvm install 12
+                        nvm install 16
                         NODE_VERSION=$(node -v)
                         nvm alias default ${NODE_VERSION//v}
 
