@@ -4,23 +4,23 @@
     "description": "A Minimal Monofony project to create applications.",
     "license": "MIT",
     "require": {
-        "php": "^8.0",
+        "php": "^8.1",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/migrations": "^3.2",
-        "monofony/admin-pack": "^0.9@alpha",
-        "monofony/core-pack": "^0.9@alpha",
-        "symfony/dotenv": "^5.4 || ^6.0",
+        "monofony/admin-pack": "^0.10@alpha",
+        "monofony/core-pack": "^0.10@alpha",
+        "symfony/dotenv": "6.2.*",
         "symfony/flex": "^2.0",
         "symfony/monolog-bundle": "^3.6",
-        "symfony/runtime": "^5.4 || ^6.0",
-        "symfony/mailer": "^5.4 || ^6.0",
+        "symfony/runtime": "6.2.*",
+        "symfony/mailer": "6.2.*",
         "symfony/webpack-encore-bundle": "^1.9"
     },
     "require-dev": {
         "dbrekelmans/bdi": "^1.0",
-        "monofony/test-pack": "^0.9@alpha",
+        "monofony/test-pack": "^0.10@alpha",
         "robertfausk/behat-panther-extension": "^1.1",
-        "symfony/phpunit-bridge": "^5.4 || ^6.0"
+        "symfony/phpunit-bridge": "6.2.*"
     },
     "config": {
         "allow-plugins": {
@@ -62,7 +62,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": true,
-            "require": "6.1.*",
+            "require": "6.2.*",
             "endpoint": "flex://defaults"
         }
     },
