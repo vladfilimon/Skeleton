@@ -105,7 +105,7 @@ jobs:
                     {
                     }
                     EOF
-                    composer require monofony/api-pack ^0.10@alpha
+                    composer require monofony/api-pack ^0.10
 
             -
                 name: Run PHPUnit
@@ -183,7 +183,7 @@ jobs:
                     sed -i -e 's/\/\/ const frontendConfig/const frontendConfig/' webpack.config.js
                     sed -i -e 's/module\.exports \= \[backendConfig\]\;/\/\/ module\.exports \= \[backendConfig\]\;/' webpack.config.js
                     sed -i -e 's/\/\/ module\.exports \= \[backendConfig, frontendConfig\]\;/module\.exports \= \[backendConfig, frontendConfig\]\;/' webpack.config.js
-                    composer require monofony/front-pack ^0.10@alpha
+                    composer require monofony/front-pack ^0.10
 
             -
                 name: Install certificates
