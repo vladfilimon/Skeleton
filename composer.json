@@ -1,5 +1,5 @@
 {
-    "name": "monofony/skeleton",
+    "name": "vladfilimon/skeleton",
     "type": "project",
     "description": "A Minimal Monofony project to create applications.",
     "license": "MIT",
@@ -7,8 +7,8 @@
         "php": "^8.1",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/migrations": "^3.2",
-        "monofony/admin-pack": "^0.10",
-        "monofony/core-pack": "^0.10",
+        "vladfilimon/admin-pack": "^0.10",
+        "vladfilimon/core-pack": "^0.10",
         "symfony/dotenv": "6.2.*",
         "symfony/flex": "^2.0",
         "symfony/monolog-bundle": "^3.6",
@@ -18,7 +18,7 @@
     },
     "require-dev": {
         "dbrekelmans/bdi": "^1.0",
-        "monofony/test-pack": "^0.10",
+        "vladfilimon/test-pack": "^0.10",
         "robertfausk/behat-panther-extension": "^1.1",
         "symfony/phpunit-bridge": "6.2.*"
     },
